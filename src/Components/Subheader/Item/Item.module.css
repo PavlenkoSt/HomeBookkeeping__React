@@ -1,0 +1,30 @@
+.nav{
+    display: flex;
+    height: 60px;
+    box-shadow: 0 4px 2px #333;
+}
+
+.link{
+    color: rgb(253, 253, 253);
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    text-decoration: none;
+    box-shadow: 0 0 0 3px rgb(233 233 233);
+    background-color: rgb(255, 176, 5);
+    transition: all ease 0.2s;
+    margin-top: 5px;
+}
+
+.link:hover{
+    background-color: rgb(238, 163, 0);
+}
+
+.link.active{
+    background-color: #333 !important;
+    color: rgb(255, 176, 5);
+}

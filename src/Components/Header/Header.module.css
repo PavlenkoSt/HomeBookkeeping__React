@@ -1,0 +1,50 @@
+.header{
+    height: 80px;
+    background-color: rgb(255, 176, 5);
+    box-shadow: 0 1px 2px #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav{
+    display: flex;
+}
+
+.link{
+    text-transform: uppercase;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 0 20px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.link:hover{
+    background-color: rgb(238, 163, 0);
+}
+
+.link.active{
+    background-color: #333 !important;
+    color: rgb(238, 163, 0);
+}
+
+.bill{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.cur{
+    font-size: 18px;
+    font-weight: 700;
+}
