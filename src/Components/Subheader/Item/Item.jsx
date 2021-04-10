@@ -1,26 +1,17 @@
-import { connect } from "react-redux"
-import { NavLink } from "react-router-dom"
+import { Redirect } from 'react-router'
 import s from './Item.module.css'
 
-const Add = ({ paths, location }) => {
-    const filteredLink = paths.filter(path => location.pathname.match(path.to))
-
-    const subheaderLinks = filteredLink[0].childLinks.map(subpath => {
-        const activeClass = location.pathname.match(subpath.to) ? s.active : ''
-        return <NavLink key={subpath.id} className={`${s.link} ${activeClass}`} to={subpath.to}>{subpath.text}</NavLink>
-    })
-        
+const Item = ({isOpenPage , subheaderLinks, redirect}) => {
     return (
         <div>
-            <nav className={s.nav}>
+            <div className={s.nav}>
                 {subheaderLinks}
-            </nav>
+            </div>
+            {
+                !isOpenPage.length ? <Redirect to={redirect} /> : null
+            }
         </div>
     )
 }
 
-const mapStateToProps = state => ({
-    paths: state.header.paths
-})
-
-export default connect(mapStateToProps)(Add)
+export default Item

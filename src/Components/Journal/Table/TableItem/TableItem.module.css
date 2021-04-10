@@ -1,0 +1,40 @@
+.income,
+.outcome{
+    font-weight: 700;
+    color: #fff;
+}
+
+.income {
+    background-color: #31a626a2;
+}
+
+.outcome{
+    background-color: #c51e1e9a;
+}
+
+.incomeBtn,
+.outcomeBtn{
+    padding: 5px 10px;
+    border: none;
+    box-shadow: 1px 1px 2px #333;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all ease 0.2s;
+}
+
+.incomeBtn{
+    background-color: #d40202;
+}
+.incomeBtn:hover{
+    background-color: #e94040;
+}
+
+.outcomeBtn{
+    background-color: #31a626;
+}
+
+.outcomeBtn:hover{
+    background-color: #41cc34;
+}

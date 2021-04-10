@@ -42,6 +42,12 @@
     flex-direction: column;
     padding: 0 15px;
     font-size: 16px;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.bill:hover{
+    background-color: rgb(238, 163, 0);
 }
 
 .cur{

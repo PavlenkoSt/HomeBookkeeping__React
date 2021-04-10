@@ -1,0 +1,19 @@
+.general{
+    margin: 15px auto 0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px #333;
+}
+
+.sum{
+    font-weight: 700;
+}
+
+.general.plus{
+    background-color: rgb(0, 202, 17);
+}
+
+.general.minus{
+    background-color: rgb(202, 0, 0);
+}

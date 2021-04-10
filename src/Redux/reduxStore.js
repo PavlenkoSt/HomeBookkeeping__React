@@ -1,8 +1,14 @@
 import { combineReducers, compose, createStore } from "redux";
-import headerReducer from "./headerReducer";
+import { reducer as formReducer } from 'redux-form'
+import billReducer from './billReducer';
+import headerReducer from './headerReducer';
+import chartReducer from './chartReducer';
 
 const reducers = combineReducers({
-    header: headerReducer
+    header: headerReducer,
+    bill: billReducer,
+    chart: chartReducer,
+    form: formReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

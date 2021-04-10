@@ -1,0 +1,23 @@
+.container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 50px auto;
+}
+
+.date{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 176, 5);
+    position: fixed;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    bottom: 0;
+    left: 0;
+    border: 3px solid rgb(233, 233, 233);
+    box-shadow: 0 0 3px #333;
+}
