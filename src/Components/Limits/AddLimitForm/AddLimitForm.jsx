@@ -24,7 +24,7 @@ const AddLimitForm = ({ handleSubmit }) => {
                     onBlur={removeSet}
                     name='category' 
                     component='input' 
-                    className={s.input} />
+                    className={`${s.input} ${s2.input}`} />
                 </label>
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Лимит:</span>
@@ -34,7 +34,7 @@ const AddLimitForm = ({ handleSubmit }) => {
                     name='limit' 
                     component='input' 
                     type='number'
-                    className={s.input} />
+                    className={`${s.input} ${s2.input}`} />
                 </label>
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Количество дней:</span>
@@ -44,7 +44,7 @@ const AddLimitForm = ({ handleSubmit }) => {
                     name='days' 
                     component='input' 
                     type='number'
-                    className={s.input} />
+                    className={`${s.input} ${s2.input}`} />
                 </label>
             </div>
             <button onClick={clearInputsClasses} className={s.submit} type='submit'>Добавить</button>

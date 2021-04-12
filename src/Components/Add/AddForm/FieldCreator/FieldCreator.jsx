@@ -1,7 +1,6 @@
 import { Field } from 'redux-form'
 import s from './FieldCreator.module.css'
 
-
 export const FieldCreator = ( addModePlus, component, name, text, type = 'text', classN = '', disabled = false) => {
     
     return (

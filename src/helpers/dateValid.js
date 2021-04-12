@@ -36,7 +36,6 @@ const dateValid = (selectVal, date) => {
         default: 
             return false
     }
-    return false;
 }
 
 export default dateValid

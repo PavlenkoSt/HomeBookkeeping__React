@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 import { removeSet, addSet } from '../../../helpers/manageFormClasses'
 import s from './AddPlanForm.module.css'
 
-const AddPlanForm = ({ handleSubmit }) => {
+const AddPlanForm = React.memo(({ handleSubmit }) => {
 
     const formRef = React.createRef()
 
@@ -38,7 +38,7 @@ const AddPlanForm = ({ handleSubmit }) => {
             <button onClick={clearInputsClasses} className={s.submit} type='submit'>Добавить</button>
         </form>
     )
-}
+})
 
 export default compose(
     reduxForm({ form: 'add-new-plan' })

@@ -30,12 +30,6 @@
     font-size: 15px !important;
 }
 
-label.set .span{
-    transform: translateY(-230%);
-    left: 0;
-    font-size: 12px !important;
-}
-
 .input{
     font-weight: 700;
     padding: 10px;

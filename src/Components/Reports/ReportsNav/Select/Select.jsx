@@ -16,14 +16,14 @@ const Select = ({ showTimeMode, changeShowTimeMode, setFilteredTransactions, all
 
     return (
         <div className={s.selectContainer}>   
-            <select onChange={(e) => {
+            <select value={showTimeMode} onChange={(e) => {
                 changeShowTimeMode(e.target.value)
                 setFilteredTransactions(allTransactions)
             }} >
-                <option value="day" selected={showTimeMode === 'day'} >Сегодня</option>
-                <option value="week" selected={showTimeMode === 'week'}>Последняя неделя</option>
-                <option value="month" selected={showTimeMode === 'month'}>Последний месяц</option>
-                <option value="year" selected={showTimeMode === 'year'}>Последний год</option>
+                <option value="day">Сегодня</option>
+                <option value="week">Последняя неделя</option>
+                <option value="month">Последний месяц</option>
+                <option value="year">Последний год</option>
             </select>
         </div>
     )

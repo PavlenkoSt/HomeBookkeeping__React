@@ -1,15 +1,14 @@
 import { reduxForm } from "redux-form";
 import s from './AddForm.module.css'
-import fieldStyles from '../../common/FieldCreator/FieldCreator.module.css'
-import { FieldCreator } from '../../common/FieldCreator/FieldCreator'
+import fieldStyles from './FieldCreator/FieldCreator.module.css'
+import { FieldCreator } from './FieldCreator/FieldCreator'
 import { compose } from "redux";
 import { connect } from "react-redux";
 import React from "react";
 import { useEffect } from "react";
 import { reset } from 'redux-form'
 
-
-const AddForm = ({ addModePlus, handleSubmit, reset }) => {
+const AddForm = React.memo(({ addModePlus, handleSubmit, reset }) => {
 
     const formRef = React.createRef()
 
@@ -38,10 +37,10 @@ const AddForm = ({ addModePlus, handleSubmit, reset }) => {
                 { FieldCreator( addModePlus, 'input', 'to', 'Куда:', 'text', s.labelD, addModePlus) }
             </div>
             { FieldCreator( addModePlus, 'input', 'desc', 'Описание:') }
-            <input onClick={() => clearInputsClasses()} className={ s.btn + ' ' + (addModePlus ? s.btnPlus : s.btnMinus)} type="submit" value="Сохранить" />
+            <input onClick={clearInputsClasses} className={ s.btn + ' ' + (addModePlus ? s.btnPlus : s.btnMinus)} type="submit" value="Сохранить" />
         </form>
     )
-}
+}) 
 
 const mapStateToProps = state => ({
     addModePlus: state.bill.addModePlus

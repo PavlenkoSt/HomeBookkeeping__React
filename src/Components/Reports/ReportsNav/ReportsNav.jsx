@@ -1,7 +1,5 @@
 import Buttons from './Buttons/Buttons'
 import Select from './Select/Select'
-import s from './ReportsNav.module.css'
-
 
 const ReportsNav = ({ showModeIncome, changeShowModeIncome, showTimeMode, changeShowTimeMode, setFilteredTransactions, allTransactions }) => {
     return (
