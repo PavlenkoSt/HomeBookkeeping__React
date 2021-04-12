@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
-import Chart from './Chart/Chart'
+// import Chart from './Chart/Chart'
 import s from './Reports.module.css'
 import ReportsNav from './ReportsNav/ReportsNav'
 import { changeShowModeIncome, changeShowTimeMode, setFilteredTransactions, setActiveCategory, changeGeneralSum } from '../../Redux/chartReducer'
 import ReportsInfo from './ReportsInfo/ReportsInfo'
 import GeneralSum from './GeneralSum/GeneralSum'
+import ChartContainer from './Chart/ChartContainer'
 
 const Reports = ({ showModeIncome, changeShowModeIncome, showTimeMode, changeShowTimeMode, setFilteredTransactions, allTransactions, filteredTransactions, setActiveCategory, activeCategory, generalSum, changeGeneralSum }) => {
     return (
@@ -17,10 +18,22 @@ const Reports = ({ showModeIncome, changeShowModeIncome, showTimeMode, changeSho
                 setFilteredTransactions={setFilteredTransactions}
                 allTransactions={allTransactions}
                 />
-            <GeneralSum generalSum={generalSum} showModeIncome={showModeIncome} filteredTransactions={filteredTransactions} changeGeneralSum={changeGeneralSum}/>
+            <GeneralSum 
+                generalSum={generalSum} 
+                showModeIncome={showModeIncome} 
+                filteredTransactions={filteredTransactions} 
+                changeGeneralSum={changeGeneralSum}
+                />
             <div className={s.main}>
-                <Chart filteredTransactions={filteredTransactions} showModeIncome={showModeIncome} setActiveCategory={setActiveCategory}/>
-                <ReportsInfo filteredTransactions={filteredTransactions} activeCategory={activeCategory}/>
+                <ChartContainer 
+                    filteredTransactions={filteredTransactions} 
+                    showModeIncome={showModeIncome} 
+                    setActiveCategory={setActiveCategory}
+                    />
+                <ReportsInfo 
+                    filteredTransactions={filteredTransactions} 
+                    activeCategory={activeCategory}
+                    />
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import { Route } from "react-router"
 import ItemContainer from "./Item/ItemContainer"
 
-const Subheader = props => {
+const Subheader = () => {
     return (
         <div>
             <Route path='/add' component={ItemContainer} />

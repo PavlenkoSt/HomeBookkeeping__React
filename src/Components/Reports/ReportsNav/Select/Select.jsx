@@ -6,8 +6,8 @@ import s from './Select.module.css'
 const Select = ({ showTimeMode, changeShowTimeMode, setFilteredTransactions, allTransactions }) => {
 
     useEffect(() => {
-            const elems = document.querySelectorAll('select');
-            M.FormSelect.init(elems, {});
+        const elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems, {});
     }, [])
 
     useEffect(() => {

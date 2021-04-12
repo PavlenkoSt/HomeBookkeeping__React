@@ -1,23 +1,11 @@
 const localStore = {
-    history: {
-        set(history){
-            const json = JSON.stringify(history)
-            localStorage.setItem('history', json)
-        },
-        get(){
-            const history = localStorage.getItem('history')
-            return JSON.parse(history)
-        }
+    set(name, obj){
+        const json = JSON.stringify(obj)
+        localStorage.setItem(name, json)
     },
-    bill: {
-        set(bill){
-            const json = JSON.stringify(bill)
-            localStorage.setItem('bill', json)
-        },
-        get(){
-            const bill = localStorage.getItem('bill')
-            return JSON.parse(bill)
-        }
+    get(name){
+        const obj = localStorage.getItem(name)
+        return JSON.parse(obj)
     }
 }
 

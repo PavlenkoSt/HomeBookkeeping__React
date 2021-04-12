@@ -3,11 +3,13 @@ import { reducer as formReducer } from 'redux-form'
 import billReducer from './billReducer';
 import headerReducer from './headerReducer';
 import chartReducer from './chartReducer';
+import budgetReducer from "./budgetReducer";
 
 const reducers = combineReducers({
     header: headerReducer,
     bill: billReducer,
     chart: chartReducer,
+    budget: budgetReducer,
     form: formReducer
 })
 

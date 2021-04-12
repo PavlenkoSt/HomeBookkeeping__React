@@ -1,10 +1,8 @@
 import s from './Table.module.css'
-import TableItem from "./TableItem/TableItem"
-
-
+import TableItemContainer from './TableItem/TableItemContainer'
 
 const Table = ({ historyTransactions, deleteTransactionSuccess, incomeToBill, outcomeFromBill }) => {
-    const tableItems = historyTransactions.map(transaction => <TableItem 
+    const tableItems = historyTransactions.map(transaction => <TableItemContainer 
         key={transaction.id}
         date={transaction.date} 
         type={transaction.type} 

@@ -1,71 +1,32 @@
 import './App.css';
-import "typeface-roboto";
-import Header from './Components/Header/Header';
-import { Redirect, Route, withRouter } from 'react-router';
-import { compose } from 'redux';
-import Subheader from './Components/Subheader/Subheader';
-import Add from './Components/Add/Add';
 import 'materialize-css';
+import { Redirect, Route, withRouter } from 'react-router';
+import Header from './Components/Header/Header';
+import Subheader from './Components/Subheader/Subheader';
 import Journal from './Components/Journal/Journal';
-import { useEffect } from 'react';
-import localStore from './localStore/localStore';
-import { connect } from 'react-redux';
-import { synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage } from './Redux/billReducer'
-import { changeModalMode } from './Redux/headerReducer'
 import Reports from './Components/Reports/Reports';
-import ModalBill from './Components/ModalBill/ModalBill';
+import AddContainer from './Components/Add/AddContainer';
+import ModalBillContainer from './Components/ModalBill/ModalBillContainer';
+import PlanningContainer from './Components/Planning/PlanningContainer';
+import LimitsContainer from './Components/Limits/LimitsContainer';
 
 
-const App = ({ location, synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage, bill, modalMode, historyTransactions, changeModalMode }) => {
-
-    useEffect(() => {
-      const result = localStore.history.get()
-      if(result && result.length){
-        synhronizedHistoryTransactionFromLocalStorage(result)
-      }
-    }, [])
-
-    useEffect(() => {
-      const result = localStore.bill.get()
-      if(result){
-        synhronizedBillFromLocalStorage(result)
-      }
-    }, [])
-
-    useEffect(() => {
-      localStore.bill.set(bill)
-    }, [bill])
-    
-    useEffect(() => {
-      if(bill === 0 && !historyTransactions.length && !localStore.history.get() ){
-        changeModalMode(true)
-      }else{
-        changeModalMode(false)
-      }
-    }, [bill, historyTransactions])
-
+const App = ({ location, modalMode}) => {
   return (
     <div className='app'>
       <Header location={location} />
       <Subheader/>
       <Route path='/'><Redirect to='/add'/></Route>
-      <Route path='/add' component={Add} />
+      <Route path='/add' component={AddContainer} />
       <Route path='/statistics/journal' component={Journal}/>
       <Route path='/statistics/reports' component={Reports}/>
+      <Route path='/budget/planning' component={PlanningContainer} />
+      <Route path='/budget/limits' component={LimitsContainer} />
       {
-        modalMode && <ModalBill
-      />}
+        modalMode && <ModalBillContainer />
+      }
     </div>
   )
 }
 
-const mapStateToProps = state => ({
-  bill: state.bill.bill,
-  modalMode: state.header.modalMode,
-  historyTransactions: state.bill.historyTransactions,
-})
-
-export default compose(
-  withRouter,
-  connect(mapStateToProps, { synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage, changeModalMode })
-)(App);
+export default withRouter(App)

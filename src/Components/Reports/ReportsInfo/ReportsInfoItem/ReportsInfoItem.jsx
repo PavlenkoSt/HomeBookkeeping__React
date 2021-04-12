@@ -1,6 +1,3 @@
-
-
-
 const ReportsInfoItem = ({ date, sum, desc}) => {
     return (
         <tr>
