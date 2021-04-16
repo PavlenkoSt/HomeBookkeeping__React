@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/HomeBookkeeping_React/static/css/main.411a5e92.chunk.css",
+    "main.js": "/HomeBookkeeping_React/static/js/main.1f2a148c.chunk.js",
+    "main.js.map": "/HomeBookkeeping_React/static/js/main.1f2a148c.chunk.js.map",
+    "runtime-main.js": "/HomeBookkeeping_React/static/js/runtime-main.79b611c8.js",
+    "runtime-main.js.map": "/HomeBookkeeping_React/static/js/runtime-main.79b611c8.js.map",
+    "static/js/2.bf38854d.chunk.js": "/HomeBookkeeping_React/static/js/2.bf38854d.chunk.js",
+    "static/js/2.bf38854d.chunk.js.map": "/HomeBookkeeping_React/static/js/2.bf38854d.chunk.js.map",
+    "static/js/3.50f33878.chunk.js": "/HomeBookkeeping_React/static/js/3.50f33878.chunk.js",
+    "static/js/3.50f33878.chunk.js.map": "/HomeBookkeeping_React/static/js/3.50f33878.chunk.js.map",
+    "index.html": "/HomeBookkeeping_React/index.html",
+    "static/css/main.411a5e92.chunk.css.map": "/HomeBookkeeping_React/static/css/main.411a5e92.chunk.css.map",
+    "static/js/2.bf38854d.chunk.js.LICENSE.txt": "/HomeBookkeeping_React/static/js/2.bf38854d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.79b611c8.js",
+    "static/js/2.bf38854d.chunk.js",
+    "static/css/main.411a5e92.chunk.css",
+    "static/js/main.1f2a148c.chunk.js"
+  ]
+}
