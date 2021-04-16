@@ -1,4 +1,4 @@
-label.set span{
+label.set span:first-child{
     transform: translateY(-230%);
     left: 0;
     font-size: 12px !important;

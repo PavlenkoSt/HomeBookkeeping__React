@@ -1,10 +1,26 @@
-.table{
+.tableJournal{
     margin-top: 5px;
 }
-.table thead tr td{
+.tableJournal thead tr td{
     font-weight: 700;
     color: #333;
 }
-.table tr td{
+.tableJournal tr td{
     padding: 10px;
+}
+
+@media(max-width: 650px){
+    .tableJournal tr td{
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    .tableJournal tr td:nth-child(2){
+        display: none;
+    }
+}
+@media(max-width: 500px){
+    .tableJournal tr td{
+        font-size: 10px;
+    }
 }

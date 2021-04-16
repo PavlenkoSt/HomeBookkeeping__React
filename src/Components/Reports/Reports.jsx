@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-// import Chart from './Chart/Chart'
 import s from './Reports.module.css'
 import ReportsNav from './ReportsNav/ReportsNav'
 import { changeShowModeIncome, changeShowTimeMode, setFilteredTransactions, setActiveCategory, changeGeneralSum } from '../../Redux/chartReducer'

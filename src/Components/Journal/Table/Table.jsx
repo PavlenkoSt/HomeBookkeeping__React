@@ -17,7 +17,7 @@ const Table = ({ historyTransactions, deleteTransactionSuccess, incomeToBill, ou
         />)
 
     return (
-        <table className={s.table}>
+        <table className={s.tableJournal}>
             <thead>
                 <tr>
                     <td>Дата</td>

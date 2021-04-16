@@ -29,7 +29,6 @@
 
 .subline{
     content: "";
-    width: 25%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -48,8 +47,37 @@
     outline: none;
     width: 15%;
 }
-.removeBtn:active{
+.removeBtn:focus{
     outline: none;
     background-color: #fff;
     border: 1px solid #333;
+}
+
+@media(max-width: 900px){
+    .item{
+        flex-direction: column;
+    }
+    .item label{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .progress{
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+    .bill{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .removeBtn{
+        width: auto;
+        padding: 5px 20px;
+    }
+}
+
+@media(max-width: 600px){
+    .item{
+        padding: 20px 10px;
+    }
 }

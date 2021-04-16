@@ -20,4 +20,20 @@
     left: 0;
     border: 3px solid rgb(233, 233, 233);
     box-shadow: 0 0 3px #333;
+    transition: opacity .2s ease, transform .3s ease;
+}
+
+@media(max-width: 650px){
+    .container{
+        padding: 0 15px;
+    }
+    .date{
+        width: 100%;
+    }
+}
+
+@media(max-width: 350px){
+    .container{
+        padding: 0 5px;
+    }
 }

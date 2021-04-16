@@ -8,8 +8,7 @@ import { connect } from 'react-redux'
 import PlanItemContainer from "./PlanItem/PlanItemContainer"
 
 
-const PlanningContainer = ({ plans, bill, addNewPlan, reset, deletePlan, changeCompletedStatus }) => {
-
+const PlanningContainer = ({ plans, bill, addNewPlan, reset, deletePlan, changeCompletedStatus}) => {
     const planItems = plans.map(plan => <PlanItemContainer 
         key={plan.id} 
         id={plan.id} 
@@ -23,14 +22,18 @@ const PlanningContainer = ({ plans, bill, addNewPlan, reset, deletePlan, changeC
     />)
 
     const onSubmit = formData => {
-        addNewPlan({
-            id: Date.now(),
-            task: formData.task,
-            sum: formData.sum,
-            completed: false
-        })
-        reset('add-new-plan')
-        M.toast({html: 'План успешно добавлен!'})
+        if(!formData.task || !formData.sum){
+            M.toast({html: 'Ошибка! План не может быть пустым!'})
+        }else{
+            addNewPlan({
+                id: Date.now(),
+                task: formData.task,
+                sum: formData.sum,
+                completed: false
+            })
+            reset('add-new-plan')
+            M.toast({html: 'План успешно добавлен!'})
+        }
     }
 
     useEffect(() => {

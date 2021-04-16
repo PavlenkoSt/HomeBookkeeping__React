@@ -7,9 +7,9 @@ import { connect } from "react-redux";
 import React from "react";
 import { useEffect } from "react";
 import { reset } from 'redux-form'
+import { required } from '../../../utilts/validators'
 
-const AddForm = React.memo(({ addModePlus, handleSubmit, reset }) => {
-
+const AddForm = React.memo(({ addModePlus, handleSubmit, reset, valid }) => {
     const formRef = React.createRef()
 
     const clearInputsClasses = () => {
@@ -31,13 +31,13 @@ const AddForm = React.memo(({ addModePlus, handleSubmit, reset }) => {
 
     return (
         <form ref={formRef} onSubmit={handleSubmit} className={s.form}>
-            { FieldCreator( addModePlus, 'input', 'sum', 'Сумма:', 'number') }
+            { FieldCreator( addModePlus, 'sum', 'Сумма:', required, 'number') }
             <div className={s.double}>
-                { FieldCreator( addModePlus, 'input', 'from', 'Откуда:', 'text', s.labelD, !addModePlus) }
-                { FieldCreator( addModePlus, 'input', 'to', 'Куда:', 'text', s.labelD, addModePlus) }
+                { FieldCreator( addModePlus, 'from', 'Откуда:', addModePlus ? required : null, 'text', s.labelD, !addModePlus) }
+                { FieldCreator( addModePlus, 'to', 'Куда:', !addModePlus ? required : null, 'text', s.labelD, addModePlus) }
             </div>
-            { FieldCreator( addModePlus, 'input', 'desc', 'Описание:') }
-            <input onClick={clearInputsClasses} className={ s.btn + ' ' + (addModePlus ? s.btnPlus : s.btnMinus)} type="submit" value="Сохранить" />
+            { FieldCreator( addModePlus, 'desc', 'Описание:', null) }
+            <input onClick={() => valid ? clearInputsClasses() : null} className={ s.btn + ' ' + (addModePlus ? s.btnPlus : s.btnMinus)} type="submit" value="Сохранить" />
         </form>
     )
 }) 

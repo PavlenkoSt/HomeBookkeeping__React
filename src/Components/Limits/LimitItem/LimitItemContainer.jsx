@@ -28,11 +28,11 @@ const LimitItemContainer = ({ id, category, sum, deleteLimit, limits, deadline, 
     const curDate = [
         new Date().getFullYear(),
         new Date().getMonth(),
-        new Date().getDate()
+        new Date().getDate() 
     ]
+    const currentDate = new Date(curDate[0], curDate[1], curDate[2])
+    const endDate = new Date(deadline[0], deadline[1], deadline[2])
 
-    const currentDate = new Date(curDate.join())
-    const endDate = new Date(deadline.join())
     let days = Math.ceil((endDate - currentDate) / (1000 * 60 * 60 * 24))
 
     if(days <= 0){

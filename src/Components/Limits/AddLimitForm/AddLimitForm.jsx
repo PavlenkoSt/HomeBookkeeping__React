@@ -2,16 +2,19 @@ import React from 'react'
 import { compose } from 'redux'
 import { Field, reduxForm } from 'redux-form'
 import { removeSet, addSet } from '../../../helpers/manageFormClasses'
+import { required } from '../../../utilts/validators'
+import { Input } from '../../Add/AddForm/FieldCreator/FieldCreator'
 import s from '../../Planning/AddPlanForm/AddPlanForm.module.css'
 import s2 from './AddLimitForm.module.css'
+import manageFormClasses from '../../../helpers/manageFormClasses.module.css'
 
 
-const AddLimitForm = ({ handleSubmit }) => {
+const AddLimitForm = ({ handleSubmit, valid }) => {
 
     const formRef = React.createRef()
 
     const clearInputsClasses = () => {
-        formRef.current.childNodes[0].childNodes.forEach(label => label.classList.remove(s.set));
+        formRef.current.childNodes[0].childNodes.forEach(label => label.classList.remove(manageFormClasses.set));
     }
 
     return (
@@ -23,8 +26,11 @@ const AddLimitForm = ({ handleSubmit }) => {
                     onFocus={addSet} 
                     onBlur={removeSet}
                     name='category' 
-                    component='input' 
-                    className={`${s.input} ${s2.input}`} />
+                    component={Input} 
+                    className={`${s.input} ${s2.input}`} 
+                    validate={required}
+                    autoComplete='off'     
+                    />
                 </label>
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Лимит:</span>
@@ -32,9 +38,12 @@ const AddLimitForm = ({ handleSubmit }) => {
                     onFocus={addSet} 
                     onBlur={removeSet}
                     name='limit' 
-                    component='input' 
+                    component={Input}
                     type='number'
-                    className={`${s.input} ${s2.input}`} />
+                    className={`${s.input} ${s2.input}`}
+                    validate={required}
+                    autoComplete='off' 
+                    />
                 </label>
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Количество дней:</span>
@@ -42,12 +51,15 @@ const AddLimitForm = ({ handleSubmit }) => {
                     onFocus={addSet} 
                     onBlur={removeSet}
                     name='days' 
-                    component='input' 
+                    component={Input}
                     type='number'
-                    className={`${s.input} ${s2.input}`} />
+                    className={`${s.input} ${s2.input}`}
+                    validate={required} 
+                    autoComplete='off'    
+                    />
                 </label>
             </div>
-            <button onClick={clearInputsClasses} className={s.submit} type='submit'>Добавить</button>
+            <button onClick={() => valid ? clearInputsClasses() : null} className={s.submit} type='submit'>Добавить</button>
         </form>
     )
 }

@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    padding: 5px 15px;
 }
 
 .modal{
@@ -45,6 +46,10 @@
     color: #fff;
 }
 
+.closeBtn:focus{
+    background-color: rgb(189, 0, 0);
+}
+
 .header{
     font-size: 28px;
     color: #333;
@@ -67,4 +72,23 @@
 
 .okBtn:hover{
     color: #fff;
+}
+
+@media(max-width: 500px){
+    .modal{
+        padding: 20px;
+    }
+    .header{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .okBtn{
+        margin-top: 5px;
+    }
+}
+
+@media(max-height: 550px){
+    .modal{
+        margin-bottom: 0;
+    }
 }

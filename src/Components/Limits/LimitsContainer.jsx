@@ -10,18 +10,22 @@ import LimitItemContainer from "./LimitItem/LimitItemContainer"
 const LimitsContainer = ({ limits, deleteLimit, addNewLimit, reset, historyTransactions }) => {
     const limitItems = limits.map(limit => <LimitItemContainer key={limit.id} id={limit.id} category={limit.category} sum={limit.limit} deadline={limit.deadline} deleteLimit={deleteLimit} limits={limits} historyTransactions={historyTransactions} />)
     const onSubmit = formData => {
-        addNewLimit({
-            id: Date.now(),
-            category: formData.category,
-            limit: formData.limit,
-            deadline: [
-                new Date().getFullYear(),
-                new Date().getMonth(),
-                new Date().getDate() + +formData.days
-            ]
-        })
-        reset('add-new-limit')
-        M.toast({html: 'Лимит успешно добавлен!'})
+        if(!formData.category || !formData.limit || !formData.days){
+            M.toast({html: 'Ошибка! Лимит не может быть пустым!'})
+        }else{
+            addNewLimit({
+                id: Date.now(),
+                category: formData.category,
+                limit: formData.limit,
+                deadline: [
+                    new Date().getFullYear(),
+                    new Date().getMonth(),
+                    new Date().getDate() + +formData.days
+                ]
+            })
+            reset('add-new-limit')
+            M.toast({html: 'Лимит успешно добавлен!'})
+        }
     }
     useEffect(() => {
         if(limits.length){
