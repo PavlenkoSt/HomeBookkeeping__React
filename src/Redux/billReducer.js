@@ -6,6 +6,7 @@ const DELETE_TRANSACTION = 'DELETE_TRANSACTION'
 const SYNHRONIZED_HISTORY_TRANSACTION_FROM_LOCAL_STORAGE = 'SYNHRONIZED_HISTORY_TRANSACTION_FROM_LOCAL_STORAGE'
 const SYNHRONIZED_BILL_FROM_LOCAL_STORAGE = 'SYNHRONIZED_BILL_FROM_LOCAL_STORAGE'
 const CHANGE_BILL = 'CHANGE_BILL'
+const CHANGE_LOAD_STATUS = 'CHANGE_LOAD_STATUS'
 
 export const incomeToBill = sum => ({ type: INCOME_TO_BILL, sum })
 export const outcomeFromBill = sum => ({ type: OUTCOM_FROM_BILL, sum })
@@ -15,11 +16,13 @@ export const deleteTransactionSuccess = id => ({ type: DELETE_TRANSACTION, id})
 export const synhronizedHistoryTransactionFromLocalStorage = history => ({ type: SYNHRONIZED_HISTORY_TRANSACTION_FROM_LOCAL_STORAGE, history })
 export const synhronizedBillFromLocalStorage = bill => ({ type: SYNHRONIZED_BILL_FROM_LOCAL_STORAGE, bill })
 export const changeBill = bill => ({ type: CHANGE_BILL, bill })
+export const changeLoadStatus = load => ({ type: CHANGE_LOAD_STATUS, load })
 
 const initialValue = {
     bill: 0,
     addModePlus: true,
-    historyTransactions: []
+    historyTransactions: [],
+    load: false
 }
 
 const billReducer = (state = initialValue, action) => {
@@ -70,6 +73,12 @@ const billReducer = (state = initialValue, action) => {
             return {
                 ...state,
                 bill: action.bill
+            }
+        }
+        case CHANGE_LOAD_STATUS: {
+            return {
+                ...state,
+                load: action.load
             }
         }
         default: 

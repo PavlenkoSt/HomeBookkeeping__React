@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import store from './Redux/reduxStore'
 import { Provider } from 'react-redux';
 import AppContainer from './AppContainer';
 
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store} >
         <AppContainer />
       </Provider>
-    </BrowserRouter>,
+    </HashRouter>,
   document.getElementById('root')
 );
 

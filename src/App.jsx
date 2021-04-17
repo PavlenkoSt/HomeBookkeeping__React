@@ -11,10 +11,12 @@ import ModalBillContainer from './Components/ModalBill/ModalBillContainer';
 import PlanningContainer from './Components/Planning/PlanningContainer';
 import LimitsContainer from './Components/Limits/LimitsContainer';
 import withTransition from './HOC/withTransition';
+import Preloader from './Components/common/Preloader/Preloader';
  
-const App = ({ location }) => {
+const App = ({ location, load}) => {
   return (
     <div className='app'>
+      <Preloader load={load} />
       <Header location={location} />
       <Subheader/>
         <Route path='/'><Redirect to='/add'/></Route>
@@ -24,7 +26,6 @@ const App = ({ location }) => {
         <Route path='/budget/planning'>{withTransition(PlanningContainer)}</Route>
         <Route path='/budget/limits'>{withTransition(LimitsContainer)}</Route>
       <ModalBillContainer />
-     
     </div>
   )
 }
