@@ -1,3 +1,14 @@
 .container{
     margin-top: 5px;
 }
+
+.noLimits{
+    margin: 50px auto;
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

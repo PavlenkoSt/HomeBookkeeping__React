@@ -4,7 +4,7 @@ import AddLimitForm from "./AddLimitForm/AddLimitForm"
 const Limits = ({ limitItems, onSubmit }) => {
     return (
         <div className={s.container}>
-            {limitItems ? limitItems : <div>Лимитов пока нет. Добавьте первый.</div>}
+            {limitItems.length ? limitItems : <div className={s.noLimits}>Лимитов пока нет. Добавьте первый.</div>}
             <AddLimitForm onSubmit={onSubmit}/>
         </div>
     )
