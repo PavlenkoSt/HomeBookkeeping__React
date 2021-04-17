@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/HomeBookkeeping_React/static/css/main.411a5e92.chunk.css",
-    "main.js": "/HomeBookkeeping_React/static/js/main.cf3d1c56.chunk.js",
-    "main.js.map": "/HomeBookkeeping_React/static/js/main.cf3d1c56.chunk.js.map",
-    "runtime-main.js": "/HomeBookkeeping_React/static/js/runtime-main.79b611c8.js",
-    "runtime-main.js.map": "/HomeBookkeeping_React/static/js/runtime-main.79b611c8.js.map",
-    "static/js/2.7c229ad4.chunk.js": "/HomeBookkeeping_React/static/js/2.7c229ad4.chunk.js",
-    "static/js/2.7c229ad4.chunk.js.map": "/HomeBookkeeping_React/static/js/2.7c229ad4.chunk.js.map",
-    "static/js/3.50f33878.chunk.js": "/HomeBookkeeping_React/static/js/3.50f33878.chunk.js",
-    "static/js/3.50f33878.chunk.js.map": "/HomeBookkeeping_React/static/js/3.50f33878.chunk.js.map",
+    "main.css": "/HomeBookkeeping_React/static/css/main.da0771db.chunk.css",
+    "main.js": "/HomeBookkeeping_React/static/js/main.53c4bd11.chunk.js",
+    "main.js.map": "/HomeBookkeeping_React/static/js/main.53c4bd11.chunk.js.map",
+    "runtime-main.js": "/HomeBookkeeping_React/static/js/runtime-main.887cdde3.js",
+    "runtime-main.js.map": "/HomeBookkeeping_React/static/js/runtime-main.887cdde3.js.map",
+    "static/js/2.3e0d6bbf.chunk.js": "/HomeBookkeeping_React/static/js/2.3e0d6bbf.chunk.js",
+    "static/js/2.3e0d6bbf.chunk.js.map": "/HomeBookkeeping_React/static/js/2.3e0d6bbf.chunk.js.map",
+    "static/js/3.8b85eeda.chunk.js": "/HomeBookkeeping_React/static/js/3.8b85eeda.chunk.js",
+    "static/js/3.8b85eeda.chunk.js.map": "/HomeBookkeeping_React/static/js/3.8b85eeda.chunk.js.map",
     "index.html": "/HomeBookkeeping_React/index.html",
-    "static/css/main.411a5e92.chunk.css.map": "/HomeBookkeeping_React/static/css/main.411a5e92.chunk.css.map",
-    "static/js/2.7c229ad4.chunk.js.LICENSE.txt": "/HomeBookkeeping_React/static/js/2.7c229ad4.chunk.js.LICENSE.txt"
+    "static/css/main.da0771db.chunk.css.map": "/HomeBookkeeping_React/static/css/main.da0771db.chunk.css.map",
+    "static/js/2.3e0d6bbf.chunk.js.LICENSE.txt": "/HomeBookkeeping_React/static/js/2.3e0d6bbf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.79b611c8.js",
-    "static/js/2.7c229ad4.chunk.js",
-    "static/css/main.411a5e92.chunk.css",
-    "static/js/main.cf3d1c56.chunk.js"
+    "static/js/runtime-main.887cdde3.js",
+    "static/js/2.3e0d6bbf.chunk.js",
+    "static/css/main.da0771db.chunk.css",
+    "static/js/main.53c4bd11.chunk.js"
   ]
 }
