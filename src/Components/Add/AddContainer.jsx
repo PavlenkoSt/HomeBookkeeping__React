@@ -11,7 +11,7 @@ import getCurrentDate from '../../helpers/currentDate'
 
 const AddContainer = ({ historyTransactions, setFilteredTransactions, reset , addModePlus, setNewTransactionSuccess, incomeToBill, outcomeFromBill, changeAddMode }) => {
     const onSubmit = (formData) => {
-        if(!formData.sum || addModePlus ? !formData.from : !formData.to){
+        if(!formData.sum || !formData.category){
             M.toast({html: 'Ошибка! Вы не можете сохранить пустую транзакцию!'})
             return false
         }else{
@@ -19,7 +19,7 @@ const AddContainer = ({ historyTransactions, setFilteredTransactions, reset , ad
                 id: Date.now(),
                 type: addModePlus ? 'income' : 'outcome',
                 sum: formData.sum,
-                category: addModePlus ? formData.from : formData.to,
+                category: formData.category,
                 desc: formData.desc,
                 date: getCurrentDate()
             }

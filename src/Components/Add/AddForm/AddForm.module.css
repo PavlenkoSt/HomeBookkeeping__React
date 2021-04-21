@@ -3,20 +3,6 @@
     margin: 0 auto;
 }
 
-.form input:disabled{
-    color: rgba(0, 0, 0, 0.42);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
-}
-
-.labelD{
-    width: 49%;
-}
-
-.double{
-    display: flex;
-    justify-content: space-between;
-}
-
 .btn{
     width: 100%;
     padding: 10px;
@@ -52,12 +38,6 @@
 
 @media(max-width: 650px){
     .form{
-        width: 100%;
-    }
-    .double{
-        flex-direction: column;
-    }
-    .labelD{
         width: 100%;
     }
 }

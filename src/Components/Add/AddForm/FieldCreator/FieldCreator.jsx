@@ -26,10 +26,10 @@ export const Input = props => {
     );
   };
 
-export const FieldCreator = ( addModePlus, name, text, validators, type = 'text', classN = '', disabled = false) => {
+export const FieldCreator = ( addModePlus, name, text, validators, type = 'text') => {
     
     return (
-        <label className={`${s.label} ${classN} ${disabled ? s.disabled : ''}`}> 
+        <label className={s.label}> 
             <span className={s.span}>{text}</span>
             <Field 
                 onFocus={e => e.target.labels[0].classList.add(s.set, addModePlus ? s.setPlus : s.setMinus) } 
@@ -38,7 +38,6 @@ export const FieldCreator = ( addModePlus, name, text, validators, type = 'text'
                 component={Input} 
                 name={name}
                 type={type}
-                disabled={disabled}
                 validate={validators}
                 autoComplete='off' 
                 />

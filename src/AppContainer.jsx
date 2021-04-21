@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage, changeLoadStatus } from './Redux/billReducer'
 import { changeModalMode } from './Redux/headerReducer'
 import { synhronizedPlansFromLocalStorage, synhronizedLimitsFromLocalStorage } from './Redux/budgetReducer'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import localStore from './localStore/localStore';
 
 const AppContainer = ({ synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage, bill, modalMode, historyTransactions, changeModalMode, synhronizedPlansFromLocalStorage, synhronizedLimitsFromLocalStorage, changeLoadStatus, load}) => {
