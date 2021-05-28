@@ -1,3 +1,6 @@
+import { TransactionType } from './chartReducer';
+
+
 const CHANGE_ADD_MODE = 'CHANGE_ADD_MODE'
 const INCOME_TO_BILL = 'INCOME_TO_BILL'
 const OUTCOM_FROM_BILL = 'OUTCOM_FROM_BILL'
@@ -8,15 +11,15 @@ const SYNHRONIZED_BILL_FROM_LOCAL_STORAGE = 'SYNHRONIZED_BILL_FROM_LOCAL_STORAGE
 const CHANGE_BILL = 'CHANGE_BILL'
 const CHANGE_LOAD_STATUS = 'CHANGE_LOAD_STATUS'
 
-export const incomeToBill = sum => ({ type: INCOME_TO_BILL, sum })
-export const outcomeFromBill = sum => ({ type: OUTCOM_FROM_BILL, sum })
-export const changeAddMode = addModePlus => ({ type: CHANGE_ADD_MODE, addModePlus })
-export const setNewTransactionSuccess = transactionItem => ({ type: SET_NEW_TRANSACTION, transactionItem })
-export const deleteTransactionSuccess = id => ({ type: DELETE_TRANSACTION, id})
-export const synhronizedHistoryTransactionFromLocalStorage = history => ({ type: SYNHRONIZED_HISTORY_TRANSACTION_FROM_LOCAL_STORAGE, history })
-export const synhronizedBillFromLocalStorage = bill => ({ type: SYNHRONIZED_BILL_FROM_LOCAL_STORAGE, bill })
-export const changeBill = bill => ({ type: CHANGE_BILL, bill })
-export const changeLoadStatus = load => ({ type: CHANGE_LOAD_STATUS, load })
+export const incomeToBill = (sum: string) => ({ type: INCOME_TO_BILL, sum })
+export const outcomeFromBill = (sum: string) => ({ type: OUTCOM_FROM_BILL, sum })
+export const changeAddMode = (addModePlus: boolean) => ({ type: CHANGE_ADD_MODE, addModePlus })
+export const setNewTransactionSuccess = (transactionItem: TransactionType) => ({ type: SET_NEW_TRANSACTION, transactionItem })
+export const deleteTransactionSuccess = (id: number) => ({ type: DELETE_TRANSACTION, id})
+export const synhronizedHistoryTransactionFromLocalStorage = (history: Array<TransactionType>) => ({ type: SYNHRONIZED_HISTORY_TRANSACTION_FROM_LOCAL_STORAGE, history })
+export const synhronizedBillFromLocalStorage = (bill: number) => ({ type: SYNHRONIZED_BILL_FROM_LOCAL_STORAGE, bill })
+export const changeBill = (bill: number) => ({ type: CHANGE_BILL, bill })
+export const changeLoadStatus = (load: boolean) => ({ type: CHANGE_LOAD_STATUS, load })
 
 const initialValue = {
     bill: 0,
@@ -25,7 +28,7 @@ const initialValue = {
     load: false
 }
 
-const billReducer = (state = initialValue, action) => {
+const billReducer = (state = initialValue, action: any) => {
     switch(action.type){
         case CHANGE_ADD_MODE: {
             return {
@@ -42,7 +45,7 @@ const billReducer = (state = initialValue, action) => {
         case DELETE_TRANSACTION: {
             return {
                 ...state,
-                historyTransactions: state.historyTransactions.filter(transaction => transaction.id !== action.id)
+                historyTransactions: state.historyTransactions.filter((transaction: TransactionType) => transaction.id !== action.id)
             }
         }
         case SYNHRONIZED_HISTORY_TRANSACTION_FROM_LOCAL_STORAGE: {

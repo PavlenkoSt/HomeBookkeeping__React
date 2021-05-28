@@ -1,8 +1,8 @@
 const CHANGE_REDIRECT_PATH = 'CHANGE_REDIRECT_PATH'
 const CHANGE_MODAL_MODE = 'CHANGE_MODAL_MODE'
 
-export const changeRedirectPath = (page, path) => ({ type: CHANGE_REDIRECT_PATH , page, path})
-export const changeModalMode = mode => ({ type: CHANGE_MODAL_MODE , mode})
+export const changeRedirectPath = (page: string, path: string) => ({ type: CHANGE_REDIRECT_PATH , page, path})
+export const changeModalMode = (mode: boolean) => ({ type: CHANGE_MODAL_MODE , mode})
 
 const initialValue = {
     paths: [
@@ -27,7 +27,7 @@ const initialValue = {
     modalMode: false,
 }
 
-const headerReducer = (state = initialValue, action) => {
+const headerReducer = (state = initialValue, action: any) => {
     switch(action.type){
         case CHANGE_REDIRECT_PATH: {
             const redirectItem = state.autoRedirect.filter( item => item.page === action.page)

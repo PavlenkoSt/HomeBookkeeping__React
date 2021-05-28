@@ -1,3 +1,17 @@
+type PlanType = {
+    id: number,
+    task: string,
+    sum: string,
+    completed: boolean
+}
+
+type LimitType = {
+    id: number,
+    category: string,
+    limit: string,
+    deadline: Array<number>
+}
+
 const DELETE_PLAN = 'DELETE_PLAN'
 const CHANGE_COMPLETED_STATUS = 'CHANGE_COMPLETED_STATUS'
 const ADD_NEW_PLAN = 'ADD_NEW_PLAN'
@@ -6,13 +20,13 @@ const DELETE_LIMIT = 'DELETE_LIMIT'
 const ADD_NEW_LIMIT = 'ADD_NEW_LIMIT'
 const SYNHRONIZED_LIMITS_FROM_LOCAL_STORAGE = 'SYNHRONIZED_LIMITS_FROM_LOCAL_STORAGE'
 
-export const deletePlan = id => ({ type: DELETE_PLAN, id })
-export const changeCompletedStatus = (id, status) => ({ type: CHANGE_COMPLETED_STATUS, id, status })
-export const addNewPlan = plan => ({ type: ADD_NEW_PLAN, plan })
-export const synhronizedPlansFromLocalStorage = plans => ({ type: SYNHRONIZED_PLANS_FROM_LOCAL_STORAGE, plans })
-export const deleteLimit = id => ({ type: DELETE_LIMIT, id })
-export const addNewLimit = limit => ({ type: ADD_NEW_LIMIT, limit })
-export const synhronizedLimitsFromLocalStorage = limits => ({ type: SYNHRONIZED_LIMITS_FROM_LOCAL_STORAGE, limits })
+export const deletePlan = (id: number) => ({ type: DELETE_PLAN, id })
+export const changeCompletedStatus = (id: number, status: boolean) => ({ type: CHANGE_COMPLETED_STATUS, id, status })
+export const addNewPlan = (plan: PlanType) => ({ type: ADD_NEW_PLAN, plan })
+export const synhronizedPlansFromLocalStorage = (plans: Array<PlanType>) => ({ type: SYNHRONIZED_PLANS_FROM_LOCAL_STORAGE, plans })
+export const deleteLimit = (id: number) => ({ type: DELETE_LIMIT, id })
+export const addNewLimit = (limit: LimitType) => ({ type: ADD_NEW_LIMIT, limit })
+export const synhronizedLimitsFromLocalStorage = (limits: Array<LimitType>) => ({ type: SYNHRONIZED_LIMITS_FROM_LOCAL_STORAGE, limits })
 
 
 const initialValue = {
@@ -20,18 +34,18 @@ const initialValue = {
     limits: []
 }
 
-const budgetReducer = (state = initialValue, action) => {
+const budgetReducer = (state = initialValue, action: any) => {
     switch(action.type){
         case DELETE_PLAN: {
             return {
                 ...state,
-                plans: state.plans.filter(plan => plan.id !== action.id)
+                plans: state.plans.filter((plan: PlanType) => plan.id !== action.id)
             }
         }
         case CHANGE_COMPLETED_STATUS: {
             return {
                 ...state,
-                plans: state.plans.map(plan => {
+                plans: state.plans.map((plan: PlanType) => {
                     if(plan.id === action.id){
                         plan.completed = action.status
                     }
@@ -54,7 +68,7 @@ const budgetReducer = (state = initialValue, action) => {
         case DELETE_LIMIT: {
             return {
                 ...state,
-                limits: state.limits.filter(limit => limit.id !== action.id)
+                limits: state.limits.filter((limit: LimitType) => limit.id !== action.id)
             }
         }
         case ADD_NEW_LIMIT: {
