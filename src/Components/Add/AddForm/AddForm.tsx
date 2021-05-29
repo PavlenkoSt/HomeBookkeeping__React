@@ -53,7 +53,7 @@ const AddForm: FC<AddFormPropsType & MapStatePropsType & MapDispatchPropsType> =
     return ( <form ref={formRef} onSubmit={handleSubmit} className={s.form}>
             { FieldCreator( addModePlus, 'sum', 'Сумма:', required, 'number') }
             { FieldCreator( addModePlus, 'category', 'Категория:', required , 'text') }
-            { FieldCreator( addModePlus, 'desc', 'Описание:', null) }
+            { FieldCreator( addModePlus, 'desc', 'Описание:', undefined) }
             <input onClick={() => valid ? clearInputsClasses() : null} className={ s.btn + ' ' + (addModePlus ? s.btnPlus : s.btnMinus)} type="submit" value="Сохранить" />
         </form>
     )

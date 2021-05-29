@@ -9,7 +9,7 @@ type AddPropsType = {
 }
 
 const Add: FC<AddPropsType> = ({ onSubmit}) => {
-    return (
+    return ( 
         <div className={s.container}>
             {/* @ts-ignore */}
             <AddForm onSubmit={onSubmit}/>
