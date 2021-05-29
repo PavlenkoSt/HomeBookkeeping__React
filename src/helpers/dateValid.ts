@@ -7,8 +7,8 @@ const removeZero = (num: string) => {
 
 const dateValid = (selectVal: string, date: string) => {
     const curDate = new Date();
-    const arr = date.split('.');
-    const dateTransact = new Date(arr.reverse().join(','));
+    const arr = date.split('.')
+    const dateTransact = new Date(arr.reverse().join(','))
     switch (selectVal) {
         case 'day':
             if (removeZero(arr[2]) === curDate.getDate() && removeZero(arr[1]) === curDate.getMonth() + 1 && +arr[0] === curDate.getFullYear()) {

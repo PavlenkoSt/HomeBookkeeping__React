@@ -6,7 +6,7 @@ export type TransactionType = {
     sum: string,
     category: string,
     desc: string,
-    date: Date
+    date: string
 }
 
 const CHANGE_SHOW_MODE_INCOME = 'CHANGE_SHOW_MODE_INCOME'
