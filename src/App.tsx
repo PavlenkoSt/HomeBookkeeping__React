@@ -1,7 +1,7 @@
 import './App.css'
 import 'materialize-css'
 import React, { FC } from 'react'
-import { Redirect, Route, withRouter, RouteComponentProps } from 'react-router'
+import { Redirect, Route } from 'react-router'
 import Header from './Components/Header/Header'
 import Subheader from './Components/Subheader/Subheader'
 import Journal from './Components/Journal/Journal'
@@ -17,11 +17,12 @@ type AppPropsType = {
   load: boolean
 }
 
-const App: FC<AppPropsType & RouteComponentProps> = ({ location, load}) => {
+const App: FC<AppPropsType> = ({ load }) => {
   return (
     <div className='app'>
       <Preloader load={load} />
-      <Header location={location} />
+      {/* @ts-ignore */}
+      <Header/>
       <Subheader/>
         <Route path='/'><Redirect to='/add'/></Route>
         <Route path='/add'>{withTransition(AddContainer)}</Route>
@@ -34,4 +35,4 @@ const App: FC<AppPropsType & RouteComponentProps> = ({ location, load}) => {
   )
 }
 
-export default withRouter(App)
+export default App

@@ -1,9 +1,10 @@
 import s from './Header.module.css'
-import { NavLink, RouteComponentProps } from 'react-router-dom'
+import { NavLink, RouteComponentProps, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { changeModalMode, PathType } from '../../Redux/headerReducer'
 import React, { FC, useEffect } from 'react'
 import { AppStateType } from '../../Redux/reduxStore'
+import { compose } from 'redux'
 
 type MapStatePropsType = {
     paths: Array<PathType>
@@ -58,4 +59,7 @@ const mapStateToProps = (state: AppStateType) => ({
     bill: state.bill.bill,
 })
 
-export default connect(mapStateToProps, { changeModalMode })(Header)
+export default compose(
+    connect(mapStateToProps, { changeModalMode }),
+    withRouter
+)(Header)
