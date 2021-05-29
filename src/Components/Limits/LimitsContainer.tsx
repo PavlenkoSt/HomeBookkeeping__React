@@ -25,7 +25,7 @@ type LimitsContainerPropsType = {
 
 const LimitsContainer: FC<LimitsContainerPropsType> = ({ limits, deleteLimit, addNewLimit, reset, historyTransactions }) => {
     const limitItems = limits.map((limit: LimitType) => <LimitItemContainer key={limit.id} id={limit.id} category={limit.category} sum={limit.limit} deadline={limit.deadline} deleteLimit={deleteLimit} limits={limits} historyTransactions={historyTransactions} />)
-    const onSubmit = (formData: FormDateValuesType) => {
+    const onSubmit = (formData: any) => {
         if(!formData.category || !formData.limit || !formData.days){
             M.toast({html: 'Ошибка! Лимит не может быть пустым!'})
         }else{
