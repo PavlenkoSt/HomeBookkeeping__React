@@ -1,6 +1,16 @@
+import { FC } from 'react'
 import s from './TableItem.module.css'
 
-const TableItem = ({ date, type, sum, category, desc, deleteTransaction }) => {
+type TableItemPropsType = {
+    type: string
+    sum: string
+    category: string
+    desc: string
+    date: string
+    deleteTransaction: () => void
+}
+
+const TableItem: FC<TableItemPropsType> = ({ date, type, sum, category, desc, deleteTransaction }) => {
     return (
         <tr className={type === 'income' ? s.income : s.outcome}>
             <td>{date}</td>
