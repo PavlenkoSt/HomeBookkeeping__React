@@ -1,7 +1,16 @@
+import { FC } from 'react'
+import { TransactionType } from '../../../Redux/chartReducer'
 import s from './Table.module.css'
 import TableItemContainer from './TableItem/TableItemContainer'
 
-const Table = ({ historyTransactions, deleteTransactionSuccess, incomeToBill, outcomeFromBill }) => {
+type TablePropsType = {
+    historyTransactions: Array<TransactionType>
+    incomeToBill: (sum: string) => void
+    outcomeFromBill: (sum: string) => void
+    deleteTransactionSuccess: (id: number) => void
+}
+
+const Table: FC<TablePropsType> = ({ historyTransactions, deleteTransactionSuccess, incomeToBill, outcomeFromBill }) => {
     const tableItems = historyTransactions.map(transaction => <TableItemContainer 
         key={transaction.id}
         date={transaction.date} 
