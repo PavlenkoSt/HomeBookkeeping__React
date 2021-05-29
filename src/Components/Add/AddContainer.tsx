@@ -23,7 +23,7 @@ type MapDispatchPropsType = {
     changeAddMode: (addMode: boolean) => void
 }
 
-type FormDataType = {
+export type FormDataType = {
     sum: string
     category: string
     desc: string
@@ -66,7 +66,7 @@ const AddContainer: FC<MapStatePropsType & MapDispatchPropsType> = ({ historyTra
         setFilteredTransactions(historyTransactions)
     }, [historyTransactions])
 
-    return <Add getCurrentDate={getCurrentDate} onSubmit={onSubmit} />
+    return <Add onSubmit={onSubmit} />
 }
 
 const mapStateToProps = (state: AppStateType) => ({
