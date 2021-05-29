@@ -1,4 +1,4 @@
-const addZero = num => num <= 9 ? num = '0' + num : num
+const addZero = (num: number | string) => num <= 9 ? num = '0' + num : num
     
 const getCurrentDate = () => {
     const date = new Date()
