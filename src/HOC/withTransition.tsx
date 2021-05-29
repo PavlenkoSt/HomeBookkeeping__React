@@ -1,7 +1,9 @@
+import { ComponentType } from 'react'
+import { ConnectedComponent } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import './withTransition.css'
 
-const withTransition = (Component: React.ComponentClass) => {
+const withTransition = (Component: ConnectedComponent<ComponentType<any>, any>) => {
     return ({match}: any) => {
         return (
             <CSSTransition in={match !== null} classNames='page' timeout={500} unmountOnExit >
