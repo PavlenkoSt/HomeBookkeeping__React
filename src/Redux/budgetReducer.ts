@@ -1,11 +1,11 @@
-type PlanType = {
+export type PlanType = {
     id: number,
     task: string,
     sum: string,
     completed: boolean
 }
 
-type LimitType = {
+export type LimitType = {
     id: number,
     category: string,
     limit: string,

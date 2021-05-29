@@ -1,12 +1,31 @@
 import App from "./App"
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import { synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage, changeLoadStatus } from './Redux/billReducer'
 import { changeModalMode } from './Redux/headerReducer'
-import { synhronizedPlansFromLocalStorage, synhronizedLimitsFromLocalStorage } from './Redux/budgetReducer'
-import { useEffect } from 'react';
-import localStore from './localStore/localStore';
+import { synhronizedPlansFromLocalStorage, synhronizedLimitsFromLocalStorage, LimitType, PlanType } from './Redux/budgetReducer'
+import { FC, useEffect } from 'react'
+import localStore from './localStore/localStore'
+import { TransactionType } from "./Redux/chartReducer"
+import { AppStateType } from "./Redux/reduxStore"
 
-const AppContainer = ({ synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage, bill, modalMode, historyTransactions, changeModalMode, synhronizedPlansFromLocalStorage, synhronizedLimitsFromLocalStorage, changeLoadStatus, load}) => {
+
+type MapStatePropsType = {
+  bill: number
+  modalMode: boolean
+  historyTransactions: Array<TransactionType>
+  load: boolean
+}
+
+type MapDispatchPropsType = {
+  synhronizedHistoryTransactionFromLocalStorage: (history: Array<TransactionType>) => void
+  synhronizedBillFromLocalStorage: (bill: number) => void
+  changeLoadStatus: (load: boolean) => void
+  synhronizedLimitsFromLocalStorage: (limits: Array<LimitType>) => void
+  synhronizedPlansFromLocalStorage: (plans: Array<PlanType>) => void
+  changeModalMode: (status: boolean) => void
+}
+
+const AppContainer: FC<MapStatePropsType & MapDispatchPropsType> = ({ synhronizedHistoryTransactionFromLocalStorage, synhronizedBillFromLocalStorage, bill, modalMode, historyTransactions, changeModalMode, synhronizedPlansFromLocalStorage, synhronizedLimitsFromLocalStorage, changeLoadStatus, load}) => {
   useEffect(() => {
       const result = localStore.get('history')
       if(result && result.length){
@@ -51,10 +70,10 @@ const AppContainer = ({ synhronizedHistoryTransactionFromLocalStorage, synhroniz
     changeLoadStatus(true)
   }, [])
 
-  return <App modalMode={modalMode} load={load}/>
+  return <App load={load}/>
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppStateType) => ({
   bill: state.bill.bill,
   modalMode: state.header.modalMode,
   historyTransactions: state.bill.historyTransactions,
