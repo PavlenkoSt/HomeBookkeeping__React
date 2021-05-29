@@ -4,6 +4,19 @@ const CHANGE_MODAL_MODE = 'CHANGE_MODAL_MODE'
 export const changeRedirectPath = (page: string, path: string) => ({ type: CHANGE_REDIRECT_PATH , page, path})
 export const changeModalMode = (mode: boolean) => ({ type: CHANGE_MODAL_MODE , mode})
 
+export type PathType = {
+    id: number
+    text: string
+    to: string
+    childLinks: Array<ChildLinkType>
+}
+
+type ChildLinkType = {
+    id: number
+    text: string
+    to: string
+}
+
 const initialValue = {
     paths: [
         {id: 0, text: 'Добавить', to: '/add', childLinks: [

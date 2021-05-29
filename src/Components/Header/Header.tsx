@@ -1,10 +1,20 @@
 import s from './Header.module.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, RouteComponentProps } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { changeModalMode } from '../../Redux/headerReducer'
-import React, { useEffect } from 'react'
+import { changeModalMode, PathType } from '../../Redux/headerReducer'
+import React, { FC, useEffect } from 'react'
+import { AppStateType } from '../../Redux/reduxStore'
 
-const Header = ({paths, location, bill, changeModalMode}) => {
+type MapStatePropsType = {
+    paths: Array<PathType>
+    bill: number
+}
+
+type MapDispatchPropsType = {
+    changeModalMode: (modalMode: boolean) => void
+}
+
+const Header: FC<MapStatePropsType & MapDispatchPropsType & RouteComponentProps> = ({paths, location, bill, changeModalMode}) => {
     const burger = React.createRef()
 
     const navs = paths.map(path => {
@@ -13,18 +23,22 @@ const Header = ({paths, location, bill, changeModalMode}) => {
     })
 
     function toggleNav(){
-        this.classList.toggle(s.active)
-        this.parentElement.childNodes[1].classList.toggle(s.show)
-        this.parentElement.classList.toggle(s.marginHeader)
+        //@ts-ignore
+        const $this = this
+        $this.classList.toggle(s.active)
+        $this.parentElement.childNodes[1].classList.toggle(s.show)
+        $this.parentElement.classList.toggle(s.marginHeader)
     }
 
     useEffect(() => {
         const burgerBtn = burger.current
+        // @ts-ignore
         burgerBtn.addEventListener('click', toggleNav)
     }, [])
 
     return (
         <header className={s.header}>
+            {/* @ts-ignore */}
             <div ref={burger} className={s.burger}>
                 <div className={s.line}></div>
             </div>
@@ -39,7 +53,7 @@ const Header = ({paths, location, bill, changeModalMode}) => {
     )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppStateType) => ({
     paths: state.header.paths,
     bill: state.bill.bill,
 })
