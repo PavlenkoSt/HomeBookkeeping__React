@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import reportWebVitals from './reportWebVitals'
 import { HashRouter } from 'react-router-dom'
 import store from './Redux/reduxStore'
-import { Provider } from 'react-redux';
-import AppContainer from './AppContainer';
+import { Provider } from 'react-redux'
+import AppContainer from './AppContainer'
 
 
 ReactDOM.render(
