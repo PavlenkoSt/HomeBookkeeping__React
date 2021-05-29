@@ -1,11 +1,11 @@
 import dateValid from '../helpers/dateValid'
 
 export type TransactionType = {
-    id: number,
-    type: string,
-    sum: string,
-    category: string,
-    desc: string,
+    id: number
+    type: string
+    sum: string
+    category: string
+    desc: string
     date: string
 }
 
