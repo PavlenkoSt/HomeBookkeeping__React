@@ -2,15 +2,35 @@ import Add from "./Add"
 import { reset } from 'redux-form'
 import { connect } from 'react-redux'
 import { setNewTransactionSuccess, incomeToBill, outcomeFromBill, changeAddMode } from '../../Redux/billReducer'
-import { setFilteredTransactions } from '../../Redux/chartReducer'
-import localStore from '../../localStore/localStore';
-import { useEffect } from 'react';
-import M from 'materialize-css';
+import { setFilteredTransactions, TransactionType } from '../../Redux/chartReducer'
+import localStore from '../../localStore/localStore'
+import { FC, useEffect } from 'react'
+import M from 'materialize-css'
 import getCurrentDate from '../../helpers/currentDate'
+import { AppStateType } from "../../Redux/reduxStore"
 
+type MapStatePropsType = {
+    addModePlus: boolean
+    historyTransactions: Array<TransactionType>
+}
 
-const AddContainer = ({ historyTransactions, setFilteredTransactions, reset , addModePlus, setNewTransactionSuccess, incomeToBill, outcomeFromBill, changeAddMode }) => {
-    const onSubmit = (formData) => {
+type MapDispatchPropsType = {
+    reset: (formName: string) => void
+    setFilteredTransactions: (allTransactions: Array<TransactionType>) => void
+    setNewTransactionSuccess: (transactionItem: TransactionType) => void
+    incomeToBill: (sum: string) => void
+    outcomeFromBill: (sum: string) => void
+    changeAddMode: (addMode: boolean) => void
+}
+
+type FormDataType = {
+    sum: string
+    category: string
+    desc: string
+}
+
+const AddContainer: FC<MapStatePropsType & MapDispatchPropsType> = ({ historyTransactions, setFilteredTransactions, reset , addModePlus, setNewTransactionSuccess, incomeToBill, outcomeFromBill, changeAddMode }) => {
+    const onSubmit = (formData: FormDataType) => {
         if(!formData.sum || !formData.category){
             M.toast({html: 'Ошибка! Вы не можете сохранить пустую транзакцию!'})
             return false
@@ -49,7 +69,7 @@ const AddContainer = ({ historyTransactions, setFilteredTransactions, reset , ad
     return <Add getCurrentDate={getCurrentDate} onSubmit={onSubmit} />
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppStateType) => ({
     addModePlus: state.bill.addModePlus,
     historyTransactions: state.bill.historyTransactions
 })
