@@ -1,10 +1,10 @@
 const localStore = {
-    set(name, obj){
+    set(name: string, obj: any){
         const json = JSON.stringify(obj)
         localStorage.setItem(name, json)
     },
-    get(name){
-        const obj = localStorage.getItem(name)
+    get(name: string){
+        const obj: any = localStorage.getItem(name)
         return JSON.parse(obj)
     }
 }
