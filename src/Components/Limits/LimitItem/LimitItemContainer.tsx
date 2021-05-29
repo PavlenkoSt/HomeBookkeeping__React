@@ -1,9 +1,21 @@
 import LimitItem from "./LimitItem"
 import M from 'materialize-css'
 import localStore from '../../../localStore/localStore'
+import { FC } from "react"
+import { LimitType } from "../../../Redux/budgetReducer"
+import { TransactionType } from "../../../Redux/chartReducer"
 
+type LimitItemContainerPropsType = {
+    id: number
+    category: string
+    sum: string
+    historyTransactions: Array<TransactionType>
+    limits: Array<LimitType>
+    deadline: Array<number>
+    deleteLimit: (id: number) => void
+}
 
-const LimitItemContainer = ({ id, category, sum, deleteLimit, limits, deadline, historyTransactions }) => {
+const LimitItemContainer: FC<LimitItemContainerPropsType> = ({ id, category, sum, deleteLimit, limits, deadline, historyTransactions }) => {
 
     const deleteItem = () => {
         deleteLimit(id)
@@ -11,7 +23,7 @@ const LimitItemContainer = ({ id, category, sum, deleteLimit, limits, deadline, 
         M.toast({html: 'Лимит успешно удален!'})
     }
 
-    let currentCategorySum = historyTransactions.filter(transaction => {
+    let currentCategorySum: Array<TransactionType> | number = historyTransactions.filter(transaction => {
         const date = transaction.date.split('.').reverse()
         date[1] = (+date[1] - 1).toString()
         const transactionDate = new Date(date.join())
@@ -33,13 +45,14 @@ const LimitItemContainer = ({ id, category, sum, deleteLimit, limits, deadline, 
     const currentDate = new Date(curDate[0], curDate[1], curDate[2])
     const endDate = new Date(deadline[0], deadline[1], deadline[2])
 
+    //@ts-ignore
     let days = Math.ceil((endDate - currentDate) / (1000 * 60 * 60 * 24))
 
     if(days <= 0){
         days = 0
     }
 
-    const progress = Math.round((currentCategorySum * 100) / sum)
+    const progress = Math.round((currentCategorySum * 100) / +sum)
     const progressLineWidth = progress > 100 ? '100%' : progress + '%'
 
     return <LimitItem 
