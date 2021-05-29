@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { compose } from 'redux'
-import { Field, reduxForm } from 'redux-form'
+import { Field, InjectedFormProps, reduxForm } from 'redux-form'
 import { removeSet, addSet } from '../../../helpers/manageFormClasses'
 import { required } from '../../../utilts/validators'
 import { Input } from '../../Add/AddForm/FieldCreator/FieldCreator'
@@ -8,17 +8,21 @@ import s from '../../Planning/AddPlanForm/AddPlanForm.module.css'
 import s2 from './AddLimitForm.module.css'
 import manageFormClasses from '../../../helpers/manageFormClasses.module.css'
 
+type AddLimitFormValuesType = {
 
-const AddLimitForm = ({ handleSubmit, valid }) => {
+}
+
+const AddLimitForm: FC<InjectedFormProps<{}, AddLimitFormValuesType> & AddLimitFormValuesType> = ({ handleSubmit, valid }) => {
 
     const formRef = React.createRef()
 
     const clearInputsClasses = () => {
+        //@ts-ignore
         formRef.current.childNodes[0].childNodes.forEach(label => label.classList.remove(manageFormClasses.set));
     }
 
-    return (
-        <form ref={formRef} onSubmit={handleSubmit} className={s.form}>
+    // @ts-ignore
+    return ( <form ref={formRef} onSubmit={handleSubmit} className={s.form}>
             <div className={s.inputsGroup}>
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Категория:</span>
@@ -65,5 +69,5 @@ const AddLimitForm = ({ handleSubmit, valid }) => {
 }
 
 export default compose(
-    reduxForm({ form: 'add-new-limit' })
+    reduxForm<{}, AddLimitFormValuesType>({ form: 'add-new-limit' })
 )(AddLimitForm)
