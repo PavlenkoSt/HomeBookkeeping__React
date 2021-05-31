@@ -9,7 +9,7 @@ import Reports from './Components/Reports/Reports'
 import Add from './Components/Add/Add'
 import ModalBillContainer from './Components/ModalBill/ModalBillContainer'
 import PlanningContainer from './Components/Planning/PlanningContainer'
-import LimitsContainer from './Components/Limits/LimitsContainer'
+import Limits from './Components/Limits/Limits'
 import withTransition from './HOC/withTransition'
 import Preloader from './Components/common/Preloader/Preloader'
 import { useDispatch, useSelector } from 'react-redux'
@@ -72,7 +72,7 @@ const App: FC = () => {
             <Route path='/statistics/journal'>{withTransition(Journal)}</Route>
             <Route path='/statistics/reports'>{withTransition(Reports)}</Route>
             <Route path='/budget/planning'>{withTransition(PlanningContainer)}</Route>
-            <Route path='/budget/limits'>{withTransition(LimitsContainer)}</Route>
+            <Route path='/budget/limits'>{withTransition(Limits)}</Route>
 
             <ModalBillContainer />
         </div>
