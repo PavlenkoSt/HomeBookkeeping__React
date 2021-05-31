@@ -5,13 +5,13 @@ import reportWebVitals from './reportWebVitals'
 import { HashRouter } from 'react-router-dom'
 import store from './Redux/reduxStore'
 import { Provider } from 'react-redux'
-import AppContainer from './AppContainer'
+import App from './App'
 
 
 ReactDOM.render(
     <HashRouter>
       <Provider store={store} >
-        <AppContainer />
+        <App />
       </Provider>
     </HashRouter>,
   document.getElementById('root')
