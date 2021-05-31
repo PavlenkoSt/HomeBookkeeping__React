@@ -11,6 +11,11 @@ export type PathType = {
     childLinks: Array<ChildLinkType>
 }
 
+export type RedirectType = {
+    page: string
+    redirect: string
+}
+
 type ChildLinkType = {
     id: number
     text: string
