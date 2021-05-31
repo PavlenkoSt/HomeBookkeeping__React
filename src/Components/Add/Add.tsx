@@ -26,6 +26,7 @@ const Add: FC = () => {
             M.toast({html: 'Ошибка! Вы не можете сохранить пустую транзакцию!'})
             return false
         }else{
+            
             const transactionItem = {
                 id: Date.now(),
                 type: addModePlus ? 'income' : 'outcome',
@@ -34,6 +35,7 @@ const Add: FC = () => {
                 desc: formData.desc,
                 date: getCurrentDate()
             }
+
             dispatch(setNewTransactionSuccess(transactionItem))
             
             if(transactionItem.type === 'income'){

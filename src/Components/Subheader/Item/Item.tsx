@@ -16,11 +16,13 @@ const Item: FC<RouteComponentProps> = ({ location }) => {
 
     const subheaderLinks = filteredLink[0].childLinks.map(subpath => {
         const activeClass = location.pathname.match(subpath.to) ? s.active : ''
+
         const subheaderItemClick = () => {
             subpath.to === '/add/income' && dispatch(changeAddMode(true))
             subpath.to === '/add/outcome' && dispatch(changeAddMode(false))
             dispatch(changeRedirectPath(filteredLink[0].to, subpath.to))
         }
+
         return <NavLink 
             onClick={subheaderItemClick} 
             key={subpath.id} 
