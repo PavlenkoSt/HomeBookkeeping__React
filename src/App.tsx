@@ -16,13 +16,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeLoadStatus, synhronizedBillFromLocalStorage, synhronizedHistoryTransactionFromLocalStorage } from './Redux/billReducer'
 import { synhronizedLimitsFromLocalStorage, synhronizedPlansFromLocalStorage } from './Redux/budgetReducer'
 import localStore from './localStore/localStore'
-import { billSelector, historyTransactionsSelector } from './Redux/selectors/billSelectors'
+import { billSelector, historyTransactionsSelector, loadSelector } from './Redux/selectors/billSelectors'
 import { changeModalMode } from './Redux/headerReducer'
 
 const App: FC = () => {
     const dispatch = useDispatch()
     const bill = useSelector(billSelector)
     const historyTransactions = useSelector(historyTransactionsSelector)
+    const load = useSelector(loadSelector)
 
     useEffect(() => {
         const history = localStore.get('history')
@@ -53,13 +54,12 @@ const App: FC = () => {
     }, [bill])
       
     useEffect(() => {
-        if(bill === 0 && !historyTransactions.length && !localStore.get('history')){
+        if(bill === 0 && !historyTransactions.length && !localStore.get('history') && load){
             dispatch(changeModalMode(true))
         }else{
             dispatch(changeModalMode(false))
-
         }
-    }, [bill])
+    }, [load])
 
     return (
         <div className='app'>
