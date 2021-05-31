@@ -1,26 +1,17 @@
-import { reduxForm } from "redux-form"
+import { InjectedFormProps, reduxForm } from "redux-form"
 import s from './AddForm.module.css'
 import fieldStyles from './FieldCreator/FieldCreator.module.css'
 import { FieldCreator } from './FieldCreator/FieldCreator'
-import { compose } from "redux"
-import { connect } from "react-redux"
-import React, { FC, FormEventHandler } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import React, { ComponentType, FC, FormEventHandler } from "react"
 import { useEffect } from "react"
 import { reset } from 'redux-form'
 import { required } from '../../../utilts/validators'
-import { AppStateType } from "../../../Redux/reduxStore"
+import { addModePlusSelector } from "../../../Redux/selectors/billSelectors"
 
 type AddFormPropsType = {
     valid: boolean
     handleSubmit: FormEventHandler<HTMLFormElement>
-}
-
-type MapStatePropsType = {
-    addModePlus: boolean
-}
-
-type MapDispatchPropsType = {
-    reset: (formName: string) => void
 }
 
 type RefType = {
@@ -31,8 +22,11 @@ type RefType = {
     }
 }
 
-const AddForm: FC<AddFormPropsType & MapStatePropsType & MapDispatchPropsType> = React.memo(({ addModePlus, handleSubmit, reset, valid }) => {
+const AddForm: ComponentType<AddFormPropsType & InjectedFormProps<{}, AddFormPropsType, string>> = React.memo(({ handleSubmit, valid }) => {
     const formRef = React.createRef() as RefType
+    const dispatch = useDispatch()
+    
+    const addModePlus = useSelector(addModePlusSelector)
 
     const clearInputsClasses = () => {
         formRef.current.childNodes.forEach((el, i) => {
@@ -45,7 +39,7 @@ const AddForm: FC<AddFormPropsType & MapStatePropsType & MapDispatchPropsType> =
     }
 
     useEffect(() => {
-        reset('add-transaction')
+        dispatch(reset('add-transaction'))
         clearInputsClasses()
     }, [addModePlus] )
     
@@ -59,11 +53,4 @@ const AddForm: FC<AddFormPropsType & MapStatePropsType & MapDispatchPropsType> =
     )
 }) 
 
-const mapStateToProps = (state: AppStateType) => ({
-    addModePlus: state.bill.addModePlus
-})
-
-export default compose(
-    connect<MapStatePropsType, MapDispatchPropsType, AddFormPropsType, AppStateType>(mapStateToProps, { reset }),
-    reduxForm<{}, AddFormPropsType>({ form: 'add-transaction' })
-)(AddForm)
+export default reduxForm<{}, AddFormPropsType>({ form: 'add-transaction' })(AddForm)

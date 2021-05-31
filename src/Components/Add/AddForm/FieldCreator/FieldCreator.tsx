@@ -4,38 +4,37 @@ import s from './FieldCreator.module.css'
 import formControlStyle from './FormControl.module.css'
 
 type FormControlPropsType = {
-  meta: {
-    touched: boolean
-    error: string
-  }
+    meta: {
+        touched: boolean
+        error: string
+    }
 }
 
 const FormControl: FC<FormControlPropsType> = ({ meta, children }) => {
-  const hasError = meta.touched && meta.error
-  return (
-    <div className={formControlStyle.formControls + ' ' + (hasError && formControlStyle.error)}>
-      <div>
-        {children}
-      </div>
-      { <span className={formControlStyle.errorMessage}>{ hasError && meta.error }</span>}
-    </div>
-  )
+    const hasError = meta.touched && meta.error
+    return (
+        <div className={formControlStyle.formControls + ' ' + (hasError && formControlStyle.error)}>
+            <div>
+                {children}
+            </div>
+            { <span className={formControlStyle.errorMessage}>{ hasError && meta.error }</span>}
+        </div>
+    )
 }
 
 export const Input = (props: any) => {
-  const {input, meta, ...restProps} = props
-  return (
-    <FormControl {...props}>
-      <input 
-        {...input}
-        {...restProps}
-      />
-    </FormControl>
-  )
+    const {input, meta, ...restProps} = props
+    return (
+        <FormControl {...props}>
+            <input 
+                {...input}
+                {...restProps}
+            />
+        </FormControl>
+    )
 }
 
 export const FieldCreator = ( addModePlus: boolean, name: string, text: string, validators: Validator | Validator[] | undefined, type = 'text') => {
-    
     return (
         <label className={s.label}> 
             <span className={s.span}>{text}</span>
@@ -51,4 +50,4 @@ export const FieldCreator = ( addModePlus: boolean, name: string, text: string, 
                 />
         </label>
     )
-  }
+}
