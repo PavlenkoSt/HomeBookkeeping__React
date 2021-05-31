@@ -1,22 +1,22 @@
 import s from './Header.module.css'
 import { NavLink, RouteComponentProps, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { changeModalMode, PathType } from '../../Redux/headerReducer'
+import {  useDispatch, useSelector } from 'react-redux'
+import { changeModalMode } from '../../Redux/headerReducer'
 import React, { FC, useEffect } from 'react'
-import { AppStateType } from '../../Redux/reduxStore'
-import { compose } from 'redux'
-
-type MapStatePropsType = {
-    paths: Array<PathType>
-    bill: number
-}
-
-type MapDispatchPropsType = {
-    changeModalMode: (modalMode: boolean) => void
-}
-
-const Header: FC<MapStatePropsType & MapDispatchPropsType & RouteComponentProps> = ({paths, location, bill, changeModalMode}) => {
+import { billSelector } from '../../Redux/selectors/billSelectors'
+import { pathsSelector } from '../../Redux/selectors/headerSelectors'
+ 
+const Header: FC<RouteComponentProps> = ({ location }) => {
     const burger = React.createRef()
+
+    const dispatch = useDispatch()
+    
+    const bill = useSelector(billSelector)
+    const paths = useSelector(pathsSelector)
+
+    const openModal = () => {
+        dispatch(changeModalMode(true))
+    }
 
     const navs = paths.map(path => {
         const activeClass = location.pathname.match(path.to) ? s.active : ''
@@ -46,7 +46,7 @@ const Header: FC<MapStatePropsType & MapDispatchPropsType & RouteComponentProps>
             <div className={s.nav}>
                 {navs}
             </div>
-            <div className={s.bill} onClick={() => {changeModalMode(true)}}>
+            <div className={s.bill} onClick={() => openModal()}>
                 Текущий баланс:
                 <div className={s.cur}>{bill + ' ₴'}</div>
             </div>
@@ -54,12 +54,5 @@ const Header: FC<MapStatePropsType & MapDispatchPropsType & RouteComponentProps>
     )
 }
 
-const mapStateToProps = (state: AppStateType) => ({
-    paths: state.header.paths,
-    bill: state.bill.bill,
-})
 
-export default compose(
-    connect(mapStateToProps, { changeModalMode }),
-    withRouter
-)(Header)
+export default withRouter(Header)
