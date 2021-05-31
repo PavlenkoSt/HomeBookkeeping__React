@@ -13,14 +13,10 @@ import LimitsContainer from './Components/Limits/LimitsContainer'
 import withTransition from './HOC/withTransition'
 import Preloader from './Components/common/Preloader/Preloader'
 
-type AppPropsType = {
-  load: boolean
-}
-
-const App: FC<AppPropsType> = ({ load }) => {
+const App: FC = () => {
   return (
     <div className='app'>
-      <Preloader load={load} />
+      <Preloader />
       {/* @ts-ignore */}
       <Header/>
       <Subheader/>

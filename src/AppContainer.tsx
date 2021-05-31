@@ -70,7 +70,7 @@ const AppContainer: FC<MapStatePropsType & MapDispatchPropsType> = ({ synhronize
     changeLoadStatus(true)
   }, [])
 
-  return <App load={load}/>
+  return <App/>
 }
 
 const mapStateToProps = (state: AppStateType) => ({

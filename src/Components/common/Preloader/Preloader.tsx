@@ -1,14 +1,15 @@
 import { FC } from 'react'
+import { useSelector } from 'react-redux'
+import { loadSelector } from '../../../Redux/selectors/billSelectors'
 import './Preloader.css'
 
-type PreloaderPropsType = {
-    load: boolean
-}
+const Preloader: FC = () => {
+    const load = useSelector(loadSelector)
 
-const Preloader: FC<PreloaderPropsType> = ({load}) => {
     if(load){
         return null
     }
+
     return (
         <div id="cube-loader">
             <div className="caption">
