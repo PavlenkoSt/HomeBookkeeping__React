@@ -17,12 +17,7 @@ const Reports = ({ showModeIncome, changeShowModeIncome, showTimeMode, changeSho
                 setFilteredTransactions={setFilteredTransactions}
                 allTransactions={allTransactions}
                 />
-            <GeneralSum 
-                generalSum={generalSum} 
-                showModeIncome={showModeIncome} 
-                filteredTransactions={filteredTransactions} 
-                changeGeneralSum={changeGeneralSum}
-                />
+            <GeneralSum />
             <div className={s.main}>
                 <ChartContainer />
                 <ReportsInfo 
