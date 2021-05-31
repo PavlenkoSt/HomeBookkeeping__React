@@ -8,11 +8,7 @@ import s from '../../Planning/AddPlanForm/AddPlanForm.module.css'
 import s2 from './AddLimitForm.module.css'
 import manageFormClasses from '../../../helpers/manageFormClasses.module.css'
 
-type AddLimitFormValuesType = {
-
-}
-
-const AddLimitForm: FC<InjectedFormProps<{}, AddLimitFormValuesType> & AddLimitFormValuesType> = ({ handleSubmit, valid }) => {
+const AddLimitForm: FC<InjectedFormProps<{}, {}> & {}> = ({ handleSubmit, valid }) => {
 
     const formRef = React.createRef()
 
@@ -27,39 +23,39 @@ const AddLimitForm: FC<InjectedFormProps<{}, AddLimitFormValuesType> & AddLimitF
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Категория:</span>
                     <Field 
-                    onFocus={addSet} 
-                    onBlur={removeSet}
-                    name='category' 
-                    component={Input} 
-                    className={`${s.input} ${s2.input}`} 
-                    validate={required}
-                    autoComplete='off'     
+                        onFocus={addSet} 
+                        onBlur={removeSet}
+                        name='category' 
+                        component={Input} 
+                        className={`${s.input} ${s2.input}`} 
+                        validate={required}
+                        autoComplete='off'     
                     />
                 </label>
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Лимит:</span>
                     <Field 
-                    onFocus={addSet} 
-                    onBlur={removeSet}
-                    name='limit' 
-                    component={Input}
-                    type='number'
-                    className={`${s.input} ${s2.input}`}
-                    validate={required}
-                    autoComplete='off' 
+                        onFocus={addSet} 
+                        onBlur={removeSet}
+                        name='limit' 
+                        component={Input}
+                        type='number'
+                        className={`${s.input} ${s2.input}`}
+                        validate={required}
+                        autoComplete='off' 
                     />
                 </label>
                 <label className={`${s.label} ${s2.label}`}> 
                     <span className={s.span}>Количество дней:</span>
                     <Field 
-                    onFocus={addSet} 
-                    onBlur={removeSet}
-                    name='days' 
-                    component={Input}
-                    type='number'
-                    className={`${s.input} ${s2.input}`}
-                    validate={required} 
-                    autoComplete='off'    
+                        onFocus={addSet} 
+                        onBlur={removeSet}
+                        name='days' 
+                        component={Input}
+                        type='number'
+                        className={`${s.input} ${s2.input}`}
+                        validate={required} 
+                        autoComplete='off'    
                     />
                 </label>
             </div>
@@ -69,5 +65,5 @@ const AddLimitForm: FC<InjectedFormProps<{}, AddLimitFormValuesType> & AddLimitF
 }
 
 export default compose(
-    reduxForm<{}, AddLimitFormValuesType>({ form: 'add-new-limit' })
+    reduxForm<{}, {}>({ form: 'add-new-limit' })
 )(AddLimitForm)

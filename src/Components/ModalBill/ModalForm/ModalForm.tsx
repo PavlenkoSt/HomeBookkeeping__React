@@ -1,15 +1,19 @@
-import { useEffect } from "react"
+import { FC, useEffect } from "react"
+import { useSelector } from "react-redux"
 import { compose } from "redux"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
+import { billSelector } from "../../../Redux/selectors/billSelectors"
 import s from '../ModalBill.module.css'
 
+const ModalForm: FC<InjectedFormProps<{}, {}> & {}> = ({ handleSubmit, initialize}) => {
+    const bill = useSelector(billSelector)
 
-const ModalForm = ({ handleSubmit, initialize, bill }) => {
     useEffect(() => {
         initialize({
             newBill: bill || '0'
         })
     }, [])
+    
     return (
         <form onSubmit={handleSubmit}>
             <Field type="number" name='newBill' component='input'/> 
@@ -19,5 +23,5 @@ const ModalForm = ({ handleSubmit, initialize, bill }) => {
 }
 
 export default compose(
-    reduxForm({ form: 'currentBill' })
+    reduxForm<{}, {}>({ form: 'currentBill' })
 )(ModalForm)

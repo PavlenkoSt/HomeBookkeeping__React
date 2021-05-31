@@ -7,7 +7,7 @@ import Subheader from './Components/Subheader/Subheader'
 import Journal from './Components/Journal/Journal'
 import Reports from './Components/Reports/Reports'
 import Add from './Components/Add/Add'
-import ModalBillContainer from './Components/ModalBill/ModalBillContainer'
+import ModalBill from './Components/ModalBill/ModalBill'
 import PlanningContainer from './Components/Planning/PlanningContainer'
 import Limits from './Components/Limits/Limits'
 import withTransition from './HOC/withTransition'
@@ -49,17 +49,18 @@ const App: FC = () => {
     }, [])
 
     useEffect(() => {
-        localStore.set('bill', bill)
+        localStore.set('bill', bill)         
     }, [bill])
       
     useEffect(() => {
-        if(bill === 0 && !historyTransactions.length && !localStore.get('history') ){
+        if(bill === 0 && !historyTransactions.length && !localStore.get('history')){
             dispatch(changeModalMode(true))
         }else{
             dispatch(changeModalMode(false))
+
         }
-    }, [bill, historyTransactions])
-    
+    }, [bill])
+
     return (
         <div className='app'>
             <Preloader />
@@ -74,7 +75,7 @@ const App: FC = () => {
             <Route path='/budget/planning'>{withTransition(PlanningContainer)}</Route>
             <Route path='/budget/limits'>{withTransition(Limits)}</Route>
 
-            <ModalBillContainer />
+            <ModalBill />
         </div>
     )
 }
