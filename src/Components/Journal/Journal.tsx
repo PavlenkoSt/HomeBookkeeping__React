@@ -1,40 +1,47 @@
 import s from './Journal.module.css'
-import { connect } from "react-redux"
-import Table from './Table/Table'
-import { deleteTransactionSuccess, incomeToBill, outcomeFromBill } from '../../Redux/billReducer'
+import { useSelector } from "react-redux"
 import { FC } from 'react'
-import { AppStateType } from '../../Redux/reduxStore'
+import { historyTransactionsSelector } from '../../Redux/selectors/billSelectors'
+import Journaltem from './Journaltem/Journaltem'
 import { TransactionType } from '../../Redux/chartReducer'
 
-type MapStatePropsType = {
-    historyTransactions: Array<TransactionType>
-}
+const Journal: FC = () => {
 
-type MapDispatchPropsType = {
-    incomeToBill: (sum: string) => void
-    outcomeFromBill: (sum: string) => void
-    deleteTransactionSuccess: (id: number) => void
-}
-
-const Journal: FC<MapStatePropsType & MapDispatchPropsType> = ({ historyTransactions, deleteTransactionSuccess, incomeToBill, outcomeFromBill }) => {
+    const historyTransactions = useSelector(historyTransactionsSelector)
 
     if(!historyTransactions.length){
         return <div className={s.noRecords}>Записей пока нет.</div>
     }
+
+    const tableItems = historyTransactions.map((transaction: TransactionType) => <Journaltem 
+        key={transaction.id}
+        date={transaction.date} 
+        type={transaction.type} 
+        sum={transaction.sum}
+        category={transaction.category}
+        desc={transaction.desc}
+        id={transaction.id}
+    />)
+
     return (
         <div>
-            <Table 
-                historyTransactions={ historyTransactions } 
-                deleteTransactionSuccess={ deleteTransactionSuccess } 
-                incomeToBill={ incomeToBill }
-                outcomeFromBill={ outcomeFromBill }
-                />
+            <table className={s.tableJournal}>
+            <thead>
+                <tr>
+                    <td>Дата</td>
+                    <td>Тип</td>
+                    <td>Сумма</td>
+                    <td>Категория</td>
+                    <td>Описание</td>
+                    <td>Удалить</td>
+                </tr>
+            </thead>
+            <tbody>
+                {tableItems.reverse()}
+            </tbody>
+        </table>
         </div>
     )
 }
 
-const mapStateToProps = (state: AppStateType) => ({
-    historyTransactions: state.bill.historyTransactions
-})
-
-export default connect(mapStateToProps, { deleteTransactionSuccess, incomeToBill, outcomeFromBill })(Journal)
+export default Journal
