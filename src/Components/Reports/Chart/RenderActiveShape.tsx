@@ -1,6 +1,6 @@
-import { Sector } from "recharts";
+import { Sector } from "recharts"
 
-const renderActiveShape = (props) => {
+const renderActiveShape = (props: any) => {
     const RADIAN = Math.PI / 180;
     const {
       cx,

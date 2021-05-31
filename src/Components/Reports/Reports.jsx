@@ -24,11 +24,7 @@ const Reports = ({ showModeIncome, changeShowModeIncome, showTimeMode, changeSho
                 changeGeneralSum={changeGeneralSum}
                 />
             <div className={s.main}>
-                <ChartContainer 
-                    filteredTransactions={filteredTransactions} 
-                    showModeIncome={showModeIncome} 
-                    setActiveCategory={setActiveCategory}
-                    />
+                <ChartContainer />
                 <ReportsInfo 
                     filteredTransactions={filteredTransactions} 
                     activeCategory={activeCategory}
