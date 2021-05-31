@@ -8,7 +8,7 @@ import Journal from './Components/Journal/Journal'
 import Reports from './Components/Reports/Reports'
 import Add from './Components/Add/Add'
 import ModalBill from './Components/ModalBill/ModalBill'
-import PlanningContainer from './Components/Planning/PlanningContainer'
+import Planning from './Components/Planning/Planning'
 import Limits from './Components/Limits/Limits'
 import withTransition from './HOC/withTransition'
 import Preloader from './Components/common/Preloader/Preloader'
@@ -72,7 +72,7 @@ const App: FC = () => {
             <Route path='/add'>{withTransition(Add)}</Route>
             <Route path='/statistics/journal'>{withTransition(Journal)}</Route>
             <Route path='/statistics/reports'>{withTransition(Reports)}</Route>
-            <Route path='/budget/planning'>{withTransition(PlanningContainer)}</Route>
+            <Route path='/budget/planning'>{withTransition(Planning)}</Route>
             <Route path='/budget/limits'>{withTransition(Limits)}</Route>
 
             <ModalBill />
