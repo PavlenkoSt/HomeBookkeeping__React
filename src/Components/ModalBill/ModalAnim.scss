@@ -1,0 +1,29 @@
+.anim-enter {
+    opacity: 0;
+    & .ModalBill_modal__1DWve{
+        transform: translateY(-200%);
+    }
+}
+.anim-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease;
+    & .ModalBill_modal__1DWve{
+        transform: translateY(0);
+        transition: transform 500ms ease;
+    }
+}
+.anim-exit {
+    opacity: 1;
+    & .ModalBill_modal__1DWve{
+        transform: translateY(0);
+    }
+}
+.anim-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease;
+    & .ModalBill_modal__1DWve{
+        transform: translateY(-200%);
+        transition: transform 500ms ease;
+    
+    }
+}

@@ -5,7 +5,7 @@ import { deleteLimit, LimitType } from '../../../Redux/budgetReducer'
 import { TransactionType } from '../../../Redux/chartReducer'
 import { historyTransactionsSelector } from '../../../Redux/selectors/billSelectors'
 import { limitsSelector } from '../../../Redux/selectors/budgetSelectors'
-import s from './LimitItem.module.css'
+import s from './LimitItem.module.scss'
 
 type LimitItemPropsType = {
     id: number

@@ -4,6 +4,10 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgb(161, 161, 161);
+
+    @media(max-width: 900px) {
+        flex-direction: column;
+    }
 }
 
 .category{
@@ -11,18 +15,34 @@
     padding: 0 5px;
     font-weight: 700;
     font-size: 14px;
+
+    @media(max-width: 900px) {
+        width: 100%;
+    }
 }
 
 .days{
     width: 15%;
     padding: 0 5px;
     text-align: center;
+
+    @media(max-width: 900px) {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
 }
 
 .progress{
     width: 50%;
     position: relative;
     padding: 0 10px;
+
+    @media(max-width: 900px) {
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 0;
+    }
 }
 
 .line{
@@ -31,6 +51,10 @@
     background-color: rgb(177, 177, 177);
     position: relative;
     overflow: hidden;
+
+    @media(max-width: 650px){
+        padding: 20px 10px;
+    }
 }
 
 .subline{
@@ -40,20 +64,23 @@
     top: 0;
     left: 0;
     background-color: #31a626;
-}
-
-.subline.orange{
-    background-color: #ff9800 !important;
-}
-
-.subline.red{
-    background-color: #d40202 !important;
+    &.orange{
+        background-color: #ff9800 !important;
+    }
+    &.red{
+        background-color: #d40202 !important;
+    }
 }
 
 .limit{
     width: 15%;
     padding: 0 5px;
     text-align: center;
+
+    @media(max-width: 900px) {
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }
 
 .removeBtn{
@@ -61,11 +88,15 @@
     padding: 0 5px;
     cursor: pointer;
     outline: none;
-}
+    &:focus{
+        background-color: #fff;
+        border: 1px solid #333;
+    }
 
-.removeBtn:focus{
-    background-color: #fff;
-    border: 1px solid #333;
+    @media(max-width: 900px) {
+        width: auto;
+        padding: 5px 20px;
+    }
 }
 
 .alert{
@@ -73,37 +104,4 @@
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
-}
-
-@media(max-width: 900px) {
-    .item{
-        flex-direction: column;
-    }
-    .category{
-        width: 100%;
-    }
-    .days{
-        width: 100%;
-        text-align: left;
-        margin-bottom: 20px;
-    }
-    .progress{
-        width: 100%;
-        margin-bottom: 5px;
-        padding: 0;
-    }
-    .limit{
-        width: 100%;
-        margin-bottom: 5px;
-    }
-    .removeBtn{
-        width: auto;
-        padding: 5px 20px;
-    }
-}
-
-@media(max-width: 650px){
-    .item{
-        padding: 20px 10px;
-    }
 }

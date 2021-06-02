@@ -1,4 +1,4 @@
-import s from './Limits.module.css'
+import s from './Limits.module.scss'
 import AddLimitForm from "./AddLimitForm/AddLimitForm"
 import { FC, useEffect } from 'react'
 import { reset } from 'redux-form'

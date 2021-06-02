@@ -1,4 +1,4 @@
-import s from './Journal.module.css'
+import s from './Journal.module.scss'
 import { useSelector } from "react-redux"
 import { FC } from 'react'
 import { historyTransactionsSelector } from '../../Redux/selectors/billSelectors'

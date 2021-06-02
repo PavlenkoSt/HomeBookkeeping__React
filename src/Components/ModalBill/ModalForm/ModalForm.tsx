@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { compose } from "redux"
 import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { billSelector } from "../../../Redux/selectors/billSelectors"
-import s from '../ModalBill.module.css'
+import s from '../ModalBill.module.scss'
 
 const ModalForm: FC<InjectedFormProps<{}, {}> & {}> = ({ handleSubmit, initialize}) => {
     const bill = useSelector(billSelector)

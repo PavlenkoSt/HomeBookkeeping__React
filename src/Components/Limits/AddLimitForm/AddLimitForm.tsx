@@ -5,7 +5,7 @@ import { removeSet, addSet } from '../../../helpers/manageFormClasses'
 import { required } from '../../../utilts/validators'
 import { Input } from '../../Add/AddForm/FieldCreator/FieldCreator'
 import s from '../../Planning/AddPlanForm/AddPlanForm.module.css'
-import s2 from './AddLimitForm.module.css'
+import s2 from './AddLimitForm.module.scss'
 import manageFormClasses from '../../../helpers/manageFormClasses.module.css'
 
 const AddLimitForm: FC<InjectedFormProps<{}, {}> & {}> = ({ handleSubmit, valid }) => {

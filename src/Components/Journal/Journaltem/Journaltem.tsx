@@ -4,7 +4,7 @@ import localStore from '../../../localStore/localStore'
 import { deleteTransactionSuccess, incomeToBill, outcomeFromBill } from '../../../Redux/billReducer'
 import { TransactionType } from '../../../Redux/chartReducer'
 import { historyTransactionsSelector } from '../../../Redux/selectors/billSelectors'
-import s from './Journaltem.module.css'
+import s from './Journaltem.module.scss'
 
 type TableItemPropsType = {
     id: number
