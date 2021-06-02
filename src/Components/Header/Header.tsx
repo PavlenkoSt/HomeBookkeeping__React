@@ -1,4 +1,4 @@
-import s from './Header.module.css'
+import s from './Header.module.scss'
 import { NavLink, RouteComponentProps, withRouter } from 'react-router-dom'
 import {  useDispatch, useSelector } from 'react-redux'
 import { changeModalMode } from '../../Redux/headerReducer'

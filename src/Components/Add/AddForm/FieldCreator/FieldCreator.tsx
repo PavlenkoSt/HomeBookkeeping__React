@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Field, Validator } from 'redux-form'
-import s from './FieldCreator.module.css'
-import formControlStyle from './FormControl.module.css'
+import s from './FieldCreator.module.scss'
+import formControlStyle from './FormControl.module.scss'
 
 type FormControlPropsType = {
     meta: {

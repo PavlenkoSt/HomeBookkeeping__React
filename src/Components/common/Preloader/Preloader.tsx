@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
 import { loadSelector } from '../../../Redux/selectors/billSelectors'
-import './Preloader.css'
+import './Preloader.scss'
 
 const Preloader: FC = () => {
     const load = useSelector(loadSelector)

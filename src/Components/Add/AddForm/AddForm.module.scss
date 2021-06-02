@@ -1,6 +1,9 @@
 .form{
     width: 600px;
     margin: 0 auto;
+    @media(max-width: 650px){
+        width: 100%;
+    }
 }
 
 .btn{
@@ -22,22 +25,14 @@
 
 .btnPlus{
     background-color: #31a626;
+    &:hover{
+        background-color: #298621;
+    }
 }    
-
-.btnPlus:hover{
-    background-color: #298621;
-}
 
 .btnMinus{
     background-color: #a62626;
-}
-
-.btnMinus:hover{
-    background-color: #8b2222;
-}
-
-@media(max-width: 650px){
-    .form{
-        width: 100%;
+    &:hover{
+        background-color: #8b2222;
     }
 }

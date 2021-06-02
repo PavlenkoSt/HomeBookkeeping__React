@@ -1,0 +1,63 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+html{
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(233, 233, 233);
+}
+
+.Add_container__1jSgh.page-enter .Add_date__2TmGa{
+  opacity: 0;
+  transform: translateY(100%);
+}
+.Add_container__1jSgh.page-enter-done .Add_date__2TmGa{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.recharts-wrapper{
+  @media(max-width: 600px){
+    margin-top: 20px;
+    width: 100% !important;
+  }
+  @media(max-width: 500px){
+    margin-top: -20px;
+  }
+  @media(max-width: 450px){
+    margin-top: -40px;
+  }
+  @media(max-width: 400px){
+    margin-top: -60px;
+  }
+  @media(max-width: 350px){
+    margin-top: -70px;
+  }
+  @media(max-width: 320px){
+    margin-top: -80px;
+  }
+}
+
+.recharts-surface{
+  @media(max-width: 600px){
+    font-size: 20px;
+    width: 100% !important;
+  }
+}
+
+
+
+
+
+
+
+

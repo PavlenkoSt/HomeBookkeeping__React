@@ -1,6 +1,6 @@
 import { InjectedFormProps, reduxForm } from "redux-form"
-import s from './AddForm.module.css'
-import fieldStyles from './FieldCreator/FieldCreator.module.css'
+import s from './AddForm.module.scss'
+import fieldStyles from './FieldCreator/FieldCreator.module.scss'
 import { FieldCreator } from './FieldCreator/FieldCreator'
 import { useDispatch, useSelector } from "react-redux"
 import React, { ComponentType, FC, FormEventHandler } from "react"

@@ -3,6 +3,13 @@
     max-width: 1200px;
     padding: 0 20px 30px;
     margin: 50px auto;
+
+    @media(max-width: 650px){
+        padding: 0 15px 80px;
+    }
+    @media(max-width: 350px){
+        padding: 0 5px 80px;
+    }
 }
 
 .date{
@@ -21,19 +28,8 @@
     border: 3px solid rgb(233, 233, 233);
     box-shadow: 0 0 3px #333;
     transition: opacity .2s ease, transform .3s ease;
-}
 
-@media(max-width: 650px){
-    .container{
-        padding: 0 15px 80px;
-    }
-    .date{
+    @media(max-width: 650px){
         width: 100%;
-    }
-}
-
-@media(max-width: 350px){
-    .container{
-        padding: 0 5px 80px;
     }
 }

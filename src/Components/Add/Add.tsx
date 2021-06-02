@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 import getCurrentDate from '../../helpers/currentDate'
-import s from './Add.module.css'
+import s from './Add.module.scss'
 import AddForm from './AddForm/AddForm'
 import { useDispatch, useSelector } from 'react-redux'
 import { addModePlusSelector, historyTransactionsSelector } from '../../Redux/selectors/billSelectors'

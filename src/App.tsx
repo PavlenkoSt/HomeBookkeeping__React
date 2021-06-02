@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import 'materialize-css'
 import React, { FC, useEffect } from 'react'
 import { Redirect, Route } from 'react-router'
