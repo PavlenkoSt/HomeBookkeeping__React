@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeShowModeIncome, setFilteredTransactions } from '../../../../Redux/chartReducer'
 import { historyTransactionsSelector } from '../../../../Redux/selectors/billSelectors'
 import { showModeIncomeSelector } from '../../../../Redux/selectors/chartSelectors'
-import s from './Buttons.module.css'
+import s from './Buttons.module.scss'
 
 const Buttons = () => {
     const dispatch = useDispatch()

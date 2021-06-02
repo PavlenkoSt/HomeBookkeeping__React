@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import M from 'materialize-css'
-import s from './Select.module.css'
+import s from './Select.module.scss'
 import { useDispatch, useSelector } from "react-redux"
 import { historyTransactionsSelector } from "../../../../Redux/selectors/billSelectors"
 import { changeShowTimeMode, setFilteredTransactions } from "../../../../Redux/chartReducer"

@@ -1,4 +1,4 @@
-import s from './Reports.module.css'
+import s from './Reports.module.scss'
 import ReportsNav from './ReportsNav/ReportsNav'
 import ReportsInfo from './ReportsInfo/ReportsInfo'
 import GeneralSum from './GeneralSum/GeneralSum'

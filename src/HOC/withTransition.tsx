@@ -1,7 +1,7 @@
 import { ComponentType, FC } from 'react'
 import { ConnectedComponent } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
-import './withTransition.css'
+import './withTransition.scss'
 
 const withTransition = (Component: ConnectedComponent<ComponentType<any>, any> | FC) => {
     return ({match}: any) => {

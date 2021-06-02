@@ -18,19 +18,15 @@
     background-color: rgb(255, 176, 5);
     transition: all ease 0.2s;
     margin-top: 5px;
-}
+    &:hover{
+        background-color: rgb(238, 163, 0);
+    }
+    &.active{
+        background-color: #333 !important;
+        color: rgb(255, 176, 5);
+    }
 
-.link:hover{
-    background-color: rgb(238, 163, 0);
-}
-
-.link.active{
-    background-color: #333 !important;
-    color: rgb(255, 176, 5);
-}
-
-@media(max-width: 650px){
-    .link{
+    @media(max-width: 650px){
         font-size: 16px;
     }
 }

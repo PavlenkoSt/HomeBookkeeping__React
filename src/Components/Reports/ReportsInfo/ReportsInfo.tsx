@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { TransactionType } from '../../../Redux/chartReducer'
 import { activeCategorySelector, filteredItemsSelector } from '../../../Redux/selectors/chartSelectors'
-import s from './ReportsInfo.module.css'
+import s from './ReportsInfo.module.scss'
 import ReportsInfoItem from './ReportsInfoItem/ReportsInfoItem'
 
 const ReportsInfo = ({  }) => {

@@ -3,10 +3,8 @@
     font-style: italic;
     font-size: 16px;
     color: #333;
-}
 
-@media(max-width: 650px){
-    .noRecords{
+    @media(max-width: 650px){
         width: 100%;
         padding: 0 15px;
         text-align: center;

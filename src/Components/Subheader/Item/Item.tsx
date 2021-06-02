@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { changeAddMode } from '../../../Redux/billReducer'
 import { changeRedirectPath, RedirectType } from '../../../Redux/headerReducer'
 import { autoRedirectSelector, pathsSelector } from '../../../Redux/selectors/headerSelectors'
-import s from './Item.module.css'
+import s from './Item.module.scss'
 
 const Item: FC<RouteComponentProps> = ({ location }) => {
     const dispatch = useDispatch()

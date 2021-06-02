@@ -1,7 +1,7 @@
-import React, { FC, MouseEvent, useEffect, useState } from "react"
+import React, { FC, useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { PieChart, Pie} from "recharts"
-import s from './Chart.module.css'
+import s from './Chart.module.scss'
 import renderActiveShape from "./RenderActiveShape"
 import { ChartDataType } from './ChartContainer'
 

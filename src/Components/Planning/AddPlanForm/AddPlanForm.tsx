@@ -3,8 +3,8 @@ import { Field, InjectedFormProps, reduxForm } from 'redux-form'
 import { removeSet, addSet } from '../../../helpers/manageFormClasses'
 import { required } from '../../../utilts/validators'
 import { Input } from '../../Add/AddForm/FieldCreator/FieldCreator'
-import s from './AddPlanForm.module.css'
-import manageFormClasses from '../../../helpers/manageFormClasses.module.css'
+import s from './AddPlanForm.module.scss'
+import manageFormClasses from '../../../helpers/manageFormClasses.module.scss'
 
 
 const AddPlanForm: FC<InjectedFormProps<{}, {}> & {}> = React.memo(({ handleSubmit, valid }) => {

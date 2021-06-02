@@ -1,4 +1,4 @@
-import s from './Planning.module.css'
+import s from './Planning.module.scss'
 import AddPlanForm from './AddPlanForm/AddPlanForm'
 import { useDispatch, useSelector } from 'react-redux'
 import { addNewPlan, PlanType } from '../../Redux/budgetReducer'

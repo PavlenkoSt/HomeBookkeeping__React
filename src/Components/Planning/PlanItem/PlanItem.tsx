@@ -4,7 +4,7 @@ import localStore from '../../../localStore/localStore'
 import { changeCompletedStatus, deletePlan, PlanType } from '../../../Redux/budgetReducer'
 import { billSelector } from '../../../Redux/selectors/billSelectors'
 import { plansSelector } from '../../../Redux/selectors/budgetSelectors'
-import s from './PlanItem.module.css'
+import s from './PlanItem.module.scss'
 
 type PlanItemPropsType = {
     id: number

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeGeneralSum, TransactionType } from '../../../Redux/chartReducer'
 import { filteredItemsSelector, generalSumSelector, showModeIncomeSelector } from '../../../Redux/selectors/chartSelectors'
-import s from './GeneralSum.module.css'
+import s from './GeneralSum.module.scss'
 
 const GeneralSum = () => {
     const dispatch = useDispatch()
