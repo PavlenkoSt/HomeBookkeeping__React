@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/HomeBookkeeping_React/static/css/main.84aca125.chunk.css",
-    "main.js": "/HomeBookkeeping_React/static/js/main.69cb07c6.chunk.js",
-    "main.js.map": "/HomeBookkeeping_React/static/js/main.69cb07c6.chunk.js.map",
-    "runtime-main.js": "/HomeBookkeeping_React/static/js/runtime-main.319b26d7.js",
-    "runtime-main.js.map": "/HomeBookkeeping_React/static/js/runtime-main.319b26d7.js.map",
-    "static/js/2.610264bc.chunk.js": "/HomeBookkeeping_React/static/js/2.610264bc.chunk.js",
-    "static/js/2.610264bc.chunk.js.map": "/HomeBookkeeping_React/static/js/2.610264bc.chunk.js.map",
-    "static/js/3.163d33fd.chunk.js": "/HomeBookkeeping_React/static/js/3.163d33fd.chunk.js",
-    "static/js/3.163d33fd.chunk.js.map": "/HomeBookkeeping_React/static/js/3.163d33fd.chunk.js.map",
-    "index.html": "/HomeBookkeeping_React/index.html",
-    "static/css/main.84aca125.chunk.css.map": "/HomeBookkeeping_React/static/css/main.84aca125.chunk.css.map",
-    "static/js/2.610264bc.chunk.js.LICENSE.txt": "/HomeBookkeeping_React/static/js/2.610264bc.chunk.js.LICENSE.txt"
+    "main.css": "/HomeBookkeeping__React/static/css/main.2147f946.chunk.css",
+    "main.js": "/HomeBookkeeping__React/static/js/main.71a1b453.chunk.js",
+    "main.js.map": "/HomeBookkeeping__React/static/js/main.71a1b453.chunk.js.map",
+    "runtime-main.js": "/HomeBookkeeping__React/static/js/runtime-main.69863701.js",
+    "runtime-main.js.map": "/HomeBookkeeping__React/static/js/runtime-main.69863701.js.map",
+    "static/js/2.31b6b9ff.chunk.js": "/HomeBookkeeping__React/static/js/2.31b6b9ff.chunk.js",
+    "static/js/2.31b6b9ff.chunk.js.map": "/HomeBookkeeping__React/static/js/2.31b6b9ff.chunk.js.map",
+    "static/js/3.7627b373.chunk.js": "/HomeBookkeeping__React/static/js/3.7627b373.chunk.js",
+    "static/js/3.7627b373.chunk.js.map": "/HomeBookkeeping__React/static/js/3.7627b373.chunk.js.map",
+    "index.html": "/HomeBookkeeping__React/index.html",
+    "static/css/main.2147f946.chunk.css.map": "/HomeBookkeeping__React/static/css/main.2147f946.chunk.css.map",
+    "static/js/2.31b6b9ff.chunk.js.LICENSE.txt": "/HomeBookkeeping__React/static/js/2.31b6b9ff.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.319b26d7.js",
-    "static/js/2.610264bc.chunk.js",
-    "static/css/main.84aca125.chunk.css",
-    "static/js/main.69cb07c6.chunk.js"
+    "static/js/runtime-main.69863701.js",
+    "static/js/2.31b6b9ff.chunk.js",
+    "static/css/main.2147f946.chunk.css",
+    "static/js/main.71a1b453.chunk.js"
   ]
 }
