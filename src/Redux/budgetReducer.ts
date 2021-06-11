@@ -30,8 +30,8 @@ export const synhronizedLimitsFromLocalStorage = (limits: Array<LimitType>) => (
 
 
 const initialValue = {
-    plans: [],
-    limits: []
+    plans: [] as Array<PlanType>,
+    limits: [] as Array<LimitType>
 }
 
 const budgetReducer = (state = initialValue, action: any) => {

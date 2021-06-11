@@ -1,5 +1,4 @@
-import { TransactionType } from './chartReducer';
-
+import { TransactionType } from './chartReducer'
 
 const CHANGE_ADD_MODE = 'CHANGE_ADD_MODE'
 const INCOME_TO_BILL = 'INCOME_TO_BILL'
@@ -24,7 +23,7 @@ export const changeLoadStatus = (load: boolean) => ({ type: CHANGE_LOAD_STATUS, 
 const initialValue = {
     bill: 0,
     addModePlus: true,
-    historyTransactions: [],
+    historyTransactions: [] as Array<TransactionType>,
     load: false
 }
 
