@@ -1,7 +1,7 @@
 const CACHE_NAME = 'bokkeeping';
 const urlsToCache = ['index.html'];
 
-self.addEventListener('install', (e: any) => {
+self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -11,7 +11,7 @@ self.addEventListener('install', (e: any) => {
   )
 });
 
-self.addEventListener('fetch', (e: any) => {
+self.addEventListener('fetch', (e) => {
     e.respondWith(
       caches.match(e.request)
         .then(() => {
@@ -21,7 +21,7 @@ self.addEventListener('fetch', (e: any) => {
     )
 });
 
-self.addEventListener('activate', (e: any) => {
+self.addEventListener('activate', (e) => {
   const cachesWhitelist = [];
   cachesWhitelist.push(CACHE_NAME);
 
