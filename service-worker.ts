@@ -1,4 +1,4 @@
-const CACHE_NAME = 'crm';
+const CACHE_NAME = 'bokkeeping';
 const urlsToCache = ['index.html'];
 
 self.addEventListener('install', (e: any) => {
